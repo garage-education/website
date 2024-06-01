@@ -5,10 +5,16 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-In this live video, we will explain the following topics:
-- Course Objectives
-- Course References
-- Prerequisites
+Here's the converted content to Markdown:
+
+## Spark Executors
+
+### Spark Executors in Depth
+
+- Executors are processes that run the tasks assigned by the driver.
+- Each Spark Application has distinct executor processes.
+- Typically, one executor runs per node in most deployment modes.
+- Executors' main function: Execute tasks, return status, and communicate outcomes.
 
 {{< youtube Ktg9MWbwPMY >}}
 

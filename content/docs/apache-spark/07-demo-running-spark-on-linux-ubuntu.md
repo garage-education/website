@@ -5,10 +5,6 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-In this live video, we will explain the following topics:
-- Course Objectives
-- Course References
-- Prerequisites
 
 {{< youtube Oz_3u_NIS2w >}}
 

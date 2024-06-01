@@ -5,10 +5,18 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-In this live video, we will explain the following topics:
-- Course Objectives
-- Course References
-- Prerequisites
+Here's the updated content with the additional photos and captions:
+
+## Apache Spark in Data Platforms
+
+### Technical components in a data lake
+
+![Technical components in a data lake](./Figures/chapter-04/datalake_table_format.png)
+*Apache Iceberg: The Definitive Guide: Data Lakehouse Functionality, Performance, and Scalability on the Data Lake, PUBLISHED BY: O'Reilly Media, Inc.*
+
+### Technical components in a data lake
+
+![Technical components in a data lake](./Figures/chapter-04/DataPlatform.png)
 
 {{< youtube pGsAOLJ6nBg >}}
 
