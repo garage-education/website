@@ -5,7 +5,7 @@
 
 # Appearance
 appearance:
-  mode: light
+  mode: system
   color: blue
 
 # SEO
@@ -39,42 +39,43 @@ header:
       text: ""
       # Logo filename in `assets/media/` folder
       filename: "logo.svg"
-    button:
-      enable: true
-      text: "Get Started"
-      url: "https://hugoblox.com/templates/details/docs/"
     show_search: true
     show_theme_chooser: true
+    highlight_active_link: true
+    show_translations: true
+    hide_language_name: false
 
 # Site footer
 footer:
   copyright:
-    notice: '© {year} My Company. This work is licensed under {license}'
+    notice: '© {year} Garage Education. This work is licensed under {license}'
     license:
       enable: true
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
+  show_translations: true
 
 # Localization
 locale:
   date_format: 'Jan 2, 2006'
   time_format: '3:04 PM'
+  address_format: en-uk
 
 # Site features
 features:
   math:
-    enable: false
+    enable: true
   privacy_pack:
-    enable: false
+    enable: true
   repository:
-    url: 'https://github.com/HugoBlox/hugo-blox-builder/'
-    content_dir: 'starters/documentation/content'
+    url: 'https://github.com/garage-education/website'
+    content_dir: 'content'
     branch: 'main'
   feedback:
     responses:
-      positive: 'Glad to hear it! [Any ideas for improvements?](https://github.com/<USERNAME>/<REPO>/issues/new).'
-      negative: 'Sorry to hear that. [Please tell us how we can improve](https://github.com/<USERNAME>/<REPO>/issues/new).'
+      positive: 'Glad to hear it! [Any ideas for improvements?](https://github.com/garage-education/website/issues/new).'
+      negative: 'Sorry to hear that. [Please tell us how we can improve](https://github.com/garage-education/website/issues/new).'
   comment:
     provider: ''
     giscus:

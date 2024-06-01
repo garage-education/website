@@ -3,8 +3,8 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: "Hugo Docs" # Website name
-baseURL: 'https://example.com/' # Website URL
+title: "Garage Education" # Website name
+baseURL: 'https://www.garageeducation.org/' # Website URL
 
 ############################
 ## PAGE OPTIONS
@@ -14,22 +14,21 @@ cascade:
   # Docs folder options
   - _target:
       path: /docs/**
-    editable: true
+    editable: false
     show_breadcrumb: true
-    # Hide date from Next In Series
-    show_date: false
-    # Show date modified at end of content
+    show_date: true
     show_date_updated: true
+    share: true
   # Blog post options
   - _target:
       path: /blog/**
       kind: page
     pager: true
-    editable: true
+    editable: false
     hide_date: false
     show_date_updated: true
     reading_time: true
-    commentable: true
+    commentable: false
     show_related: true
     share: true
     # Just use Breadcrumb for navigation on blog post pages?
