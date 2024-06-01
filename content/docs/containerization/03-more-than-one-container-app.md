@@ -3,8 +3,8 @@ linktitle: More than 1 container app
 summary: Traditional, virtualized, and container deployment are the evolution steps toward an agile infrastructure.  
 weight: 4
 
-date: "2020-04-21:00:00Z"
-lastmod: "2020-21-144T00:00:00Z"
+date: 2020-04-21
+lastmod: 2020-21-14
 draft: false # Is this a draft? true/false
 type: docs # Do not modify.
 toc: true

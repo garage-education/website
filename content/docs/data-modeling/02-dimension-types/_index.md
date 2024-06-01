@@ -4,8 +4,8 @@ linktitle: Dimension Types
 
 toc: true
 type: docs
-date: "2020-04-19T00:00:00Z"
-lastmod: "2020-04-19T00:00:00Z"
+date: 2020-04-19
+lastmod: 2020-04-19
 
 draft: false
 

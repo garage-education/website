@@ -4,8 +4,8 @@ summary: Traditional, virtualized, and container deployment are the evolution st
 weight: 1
 
 title: Containerization
-date: "2020-04-06T00:00:00Z"
-lastmod: "2020-04-06T00:00:00Z"
+date: 2020-04-06
+lastmod: 2020-04-06
 draft: false # Is this a draft? true/false
 toc: true
 type: docs # Do not modify.

@@ -5,7 +5,7 @@ weight: 77
 
 toc: true
 type: docs
-date: "2020-01-07T00:00:00+01:00"
+date: 2020-01-07
 
 draft: false
 

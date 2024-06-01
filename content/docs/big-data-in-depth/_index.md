@@ -4,8 +4,8 @@ linktitle: Big Data Engineering in Depth
 summary: The Big Data in Depth is a free online course which aims to share knowledge in the big data and data engineering. It focuses on taking you from the zero levels to be a professional in the field.
 weight: 1
 
-date: "2020-01-07T00:00:00Z"
-lastmod: "2020-01-07T00:00:00Z"
+date: 2020-01-07
+lastmod: 2020-01-07
 draft: false # Is this a draft? true/false
 type: docs # Do not modify.
 toc: true

@@ -4,7 +4,7 @@ weight: 4
 
 toc: true
 type: docs
-date: "2021-06-07T00:00:00+01:00"
+date: 2021-06-07
 
 menu:
   hadoop:

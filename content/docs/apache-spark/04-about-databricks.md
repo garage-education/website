@@ -3,6 +3,7 @@ title: About Databricks
 weight: 4
 menu: apache-spark
 date: 2024-06-01
+
 ---
 
 In this live video, we will explain the following topics:

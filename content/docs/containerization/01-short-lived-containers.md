@@ -3,8 +3,8 @@ linktitle: Short-lived containers
 summary: Traditional, virtualized, and container deployment are the evolution steps toward an agile infrastructure.  
 weight: 2
 
-date: "2020-04-14T00:00:00Z"
-lastmod: "2020-04-144T00:00:00Z"
+date: 2020-04-14
+lastmod: 2020-04-14
 draft: false # Is this a draft? true/false
 type: docs # Do not modify.
 toc: true
