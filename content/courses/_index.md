@@ -1,4 +1,0 @@
----
-linkTitle: Courses
-title: Courses
----

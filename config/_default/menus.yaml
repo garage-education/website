@@ -6,7 +6,7 @@ main:
     url: /
     weight: 10
   - name: Courses
-    url: courses/
+    url: docs/
     weight: 20
   - name: Blog
     url: blog/
@@ -18,11 +18,7 @@ sidebar:
     params:
       type: separator
     weight: 1
-  - identifier: community
-    name: "Community"
-    pageRef: "/community"
+  - identifier: Join Discord
+    name: "Join Discord ↗"
+    url: "https://discord.gg/3UHad67Y"
     weight: 2
-  - identifier: hugoDocs
-    name: "Hugo Docs ↗"
-    url: "https://docs.hugoblox.com"
-    weight: 3

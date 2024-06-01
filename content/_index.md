@@ -24,7 +24,7 @@ sections:
           image: spark-thumbnail-3840-2160.png
           button:
             text: Enroll
-            url: /website/courses/apache-spark/
+            url: /website/docs/apache-spark/
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
 ---
