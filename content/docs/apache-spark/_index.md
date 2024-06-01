@@ -2,8 +2,11 @@
 title: Apache Spark
 weight: 1
 date: 2024-06-01
-sidebar:
-  open: true
+
+menu:
+  spark:
+    name: Apache Spark
+    weight: 1
 ---
 
 {{< cards >}}
