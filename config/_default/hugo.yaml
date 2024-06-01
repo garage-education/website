@@ -13,7 +13,7 @@ baseURL: 'https://www.garageeducation.org/' # Website URL
 cascade:
   # Docs folder options
   - _target:
-      path: /docs/**
+      path: /courses/**
     editable: false
     show_breadcrumb: true
     show_date: true

@@ -1,0 +1,4 @@
+---
+linkTitle: Courses
+title: Courses
+---

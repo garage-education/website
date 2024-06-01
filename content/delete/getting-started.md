@@ -1,7 +1,7 @@
 ---
 title: Getting Started
-date: 2024-02-17
-weight: 1
+date: 2024-06-01
+weight: 2
 ---
 
 ## Quick Start from Template

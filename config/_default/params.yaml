@@ -5,7 +5,7 @@
 
 # Appearance
 appearance:
-  mode: system
+  mode: light
   color: blue
 
 # SEO
@@ -60,7 +60,7 @@ footer:
 locale:
   date_format: 'Jan 2, 2006'
   time_format: '3:04 PM'
-  address_format: en-uk
+  address_format: en-us
 
 # Site features
 features:
