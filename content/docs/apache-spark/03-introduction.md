@@ -6,10 +6,9 @@ date: 2024-06-01
 ---
 
 In this live video, we will explain the following topics:
-- Spark Motivation
-- Spark History
-- Spark Evolution
-- Introduction to Spark
+- Course Objectives
+- Course References
+- Prerequisites
 
 {{< youtube MiTOvM85WKk >}}
 
