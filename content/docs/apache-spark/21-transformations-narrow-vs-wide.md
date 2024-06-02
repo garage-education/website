@@ -22,7 +22,7 @@ Here's the converted content to Markdown:
 
 ### What are Narrow Transformations?
 
-![Spark Narrow Transformations.](./Figures/chapter-04/Narrow.png)
+![Spark Narrow Transformations.](../Figures/chapter-04/Narrow.png)
 *Figure 1: Spark Narrow Transformations.*
 
 ### Benefits of Narrow Transformations
@@ -37,7 +37,7 @@ Here's the converted content to Markdown:
 
 ### What are Wide Transformations?
 
-![Spark Wide Transformations.](./Figures/chapter-04/Wide.png)
+![Spark Wide Transformations.](../Figures/chapter-04/Wide.png)
 *Figure 2: Spark Wide Transformations.*
 
 ### Wide Transformations and Dependencies

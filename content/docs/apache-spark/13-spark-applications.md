@@ -30,7 +30,7 @@ Here's the converted content to Markdown:
 
 ### Spark Application
 
-![Spark Application](./Figures/chapter-04/SparkCourse.drawio.jpg)
+![Spark Application](../Figures/chapter-04/SparkCourse.drawio.jpg)
 *Spark the definitive guide, Ch.02*
 
 {{< youtube bvtKXbXfwmw >}}

@@ -15,7 +15,7 @@ date: 2024-06-01
 
 ### Beyond Apache Spark
 
-![Databricks Analytics Platform](./Figures/chapter-04/databricks_data_intelligence.png)
+![Databricks Analytics Platform](../Figures/chapter-04/databricks_data_intelligence.png)
 *Photo copied from [Datanami](https://www.datanami.com)*
 
 ### Do You Need Databricks to Work with Spark?

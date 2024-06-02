@@ -22,7 +22,7 @@ Here's the converted content to Markdown:
 
 ### Cluster Manager Components
 
-![A cluster driver and worker (no Spark Application yet).](./Figures/chapter-04/cluster_manager_processes.png)
+![A cluster driver and worker (no Spark Application yet).](../Figures/chapter-04/cluster_manager_processes.png)
 *Figure 1: A cluster driver and worker (no Spark Application yet).*
 
 ### Execution of Spark Applications

@@ -11,12 +11,12 @@ Here's the updated content with the additional photos and captions:
 
 ### Technical components in a data lake
 
-![Technical components in a data lake](./Figures/chapter-04/datalake_table_format.png)
+![Technical components in a data lake](../Figures/chapter-04/datalake_table_format.png)
 *Apache Iceberg: The Definitive Guide: Data Lakehouse Functionality, Performance, and Scalability on the Data Lake, PUBLISHED BY: O'Reilly Media, Inc.*
 
 ### Technical components in a data lake
 
-![Technical components in a data lake](./Figures/chapter-04/DataPlatform.png)
+![Technical components in a data lake](../Figures/chapter-04/DataPlatform.png)
 
 {{< youtube pGsAOLJ6nBg >}}
 

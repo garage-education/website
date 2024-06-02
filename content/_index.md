@@ -24,14 +24,14 @@ sections:
           image: spark-thumbnail-3840-2160.png
           button:
             text: Enroll
-            url: /website/docs/apache-spark/
+            url: /docs/apache-spark/
         - title: Hadoop
           text: Join our Hadoop course
           feature_icon: bolt
           image: thumbnails/hadoop_theory.png
           button:
             text: Enroll
-            url: /website/docs/hadoop/
+            url: /docs/hadoop/
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
 ---

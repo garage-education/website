@@ -23,12 +23,12 @@ Here's the converted content to Markdown:
 
 ### Immutable Objects
 
-![Spark Dataframe is immutable, and you can't change its values.](./Figures/chapter-04/Immutable_df.png)
+![Spark Dataframe is immutable, and you can't change its values.](../Figures/chapter-04/Immutable_df.png)
 *Figure 1: Spark Dataframe is immutable, and you can't change its values.*
 
 ### Immutable Objects
 
-![Filtering a PySpark DataFrame Based on Age](./Figures/chapter-04/pyspark_immutable_df.jpeg)
+![Filtering a PySpark DataFrame Based on Age](../Figures/chapter-04/pyspark_immutable_df.jpeg)
 *Figure 2: Filtering a PySpark DataFrame Based on Age*
 
 ### DEMO
@@ -61,7 +61,7 @@ DEMO
 
 ### Lazy Transformations Example
 
-![Spark Lazy Transformations Example.](./Figures/chapter-04/pyspark_transformations.jpeg)
+![Spark Lazy Transformations Example.](../Figures/chapter-04/pyspark_transformations.jpeg)
 *Figure 3: Spark Lazy Transformations Example.*
 
 ### Spark Operations: Actions

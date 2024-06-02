@@ -29,7 +29,7 @@ The driver is the process `in the driver seat.`[^1] of your Spark Application.
 
 ### Spark Driver: Recap
 
-![Spark Driver Recap](./Figures/chapter-04/Mairmaid_SparkDriver.png)
+![Spark Driver Recap](../Figures/chapter-04/Mairmaid_SparkDriver.png)
 
 {{< youtube ODcbq13Y1F0 >}}
 

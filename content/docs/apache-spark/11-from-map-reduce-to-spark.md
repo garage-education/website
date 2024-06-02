@@ -30,7 +30,7 @@ We break this into three stages:
 
 We distribute our raw ingredients amongst the workers.
 
-![Map](./Figures/chapter-04/map.png)
+![Map](../Figures/chapter-04/map.png)
 
 *This example taken from [https://reberhardt.com/cs110/summer-2018/lecture-notes/lecture-14/](https://reberhardt.com/cs110/summer-2018/lecture-notes/lecture-14/)*
 
@@ -38,7 +38,7 @@ We distribute our raw ingredients amongst the workers.
 
 We will organise and group the processed ingredients into piles, so that making a sandwich becomes easy.
 
-![Shuffle/Group](./Figures/chapter-04/map_shuffle.png)
+![Shuffle/Group](../Figures/chapter-04/map_shuffle.png)
 
 *This example taken from [https://reberhardt.com/cs110/summer-2018/lecture-notes/lecture-14/](https://reberhardt.com/cs110/summer-2018/lecture-notes/lecture-14/)*
 
@@ -46,13 +46,13 @@ We will organise and group the processed ingredients into piles, so that making 
 
 We’ll combine the ingredients into a sandwich.
 
-![Reduce](./Figures/chapter-04/map_reduce.png)
+![Reduce](../Figures/chapter-04/map_reduce.png)
 
 *This example taken from [https://reberhardt.com/cs110/summer-2018/lecture-notes/lecture-14/](https://reberhardt.com/cs110/summer-2018/lecture-notes/lecture-14/)*
 
 ### Map Reduce Bottleneck
 
-![Map Reduce Bottleneck](./Figures/chapter-04/MR.jpg)
+![Map Reduce Bottleneck](../Figures/chapter-04/MR.jpg)
 
 ### Spark Motivation
 

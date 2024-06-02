@@ -19,7 +19,7 @@ Here's the converted content to Markdown:
 
 ### Cluster Manager Components
 
-![A cluster driver and worker (no Spark Application yet).](./Figures/chapter-04/cluster_manager_processes.png)
+![A cluster driver and worker (no Spark Application yet).](../Figures/chapter-04/cluster_manager_processes.png)
 *Figure 1: A cluster driver and worker (no Spark Application yet).*
 
 ### Cluster Mode
@@ -33,7 +33,7 @@ Here's the converted content to Markdown:
 
 ### Spark Cluster Mode
 
-![Spark’s cluster mode.](./Figures/chapter-04/spark_cluster_mode.png)
+![Spark’s cluster mode.](../Figures/chapter-04/spark_cluster_mode.png)
 *Figure 2: Spark’s cluster mode.*
 
 ### Client Mode
@@ -46,7 +46,7 @@ Here's the converted content to Markdown:
 
 ### Spark Client Mode
 
-![Spark’s client mode.](./Figures/chapter-04/spark_client_mode.png)
+![Spark’s client mode.](../Figures/chapter-04/spark_client_mode.png)
 *Figure 3: Spark’s client mode.*
 
 ### Local Mode
