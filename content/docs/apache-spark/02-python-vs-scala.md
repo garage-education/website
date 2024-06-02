@@ -47,4 +47,4 @@ date: 2024-06-01
 
 {{< youtube WhgQsVKmlvE >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-01-Introduction.mp4)
+You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-02-Python-Vs-Scala.mp4)
