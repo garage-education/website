@@ -1,5 +1,5 @@
 ---
-title: Demo: Immutability In Spark
+title: "Demo: Immutability In Spark"
 weight: 22
 menu: apache-spark
 date: 2024-06-01

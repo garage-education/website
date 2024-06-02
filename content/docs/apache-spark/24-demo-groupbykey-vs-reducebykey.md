@@ -1,5 +1,5 @@
 ---
-title: Demo: GroupByKey Vs. ReduceByKey
+title: "Demo: GroupByKey Vs. ReduceByKey"
 weight: 24
 menu: apache-spark
 date: 2024-06-01

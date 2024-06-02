@@ -1,5 +1,5 @@
 ---
-title: Demo: Running Spark on Linux Ubuntu
+title: "Demo: Running Spark on Linux Ubuntu"
 weight: 7
 menu: apache-spark
 date: 2024-06-01

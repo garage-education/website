@@ -1,6 +1,13 @@
-{{< cards >}}
-  {{< card url="01-introduction" title="Part One: will cover most of the basic concepts in Spark with some demos and practical applications." icon="document-duplicate" >}}
-{{< /cards >}}
+---
+title: Apache Spark
+weight: 1
+date: 2024-06-01
+
+menu:
+  spark:
+    name: Apache Spark
+    weight: 1
+---
 
 | Number     | Title                                       | Link                                                   | Course       | Download Link                                                                                       |
 |------------|---------------------------------------------|--------------------------------------------------------|--------------|----------------------------------------------------------------------------------------------------|
@@ -28,6 +35,12 @@
 | Ch.04-23   | Demo: RDD Text Manipulation                 | [YouTube](https://www.youtube.com/watch?v=zGvYGJNTfvs)  | Apache Spark | [Download](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-23-Demo-RDD-Text-Manipulation.mp4) |
 | Ch.04-24   | Demo: GroupByKey Vs. ReduceByKey            | [YouTube](https://www.youtube.com/watch?v=WaYbKVNjme0)  | Apache Spark | [Download](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-24-Demo-GroupByKey-Vs-ReduceByKey.mp4) |
 | Ch.04-25   | Demo: Joining RDDs                          | [YouTube](https://www.youtube.com/watch?v=ONekPlyAcuY)  | Apache Spark | [Download](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-25-Demo-Joining-RDDs.mp4)  |
+
+[//]: # ({{< cards >}})
+
+[//]: # (  {{< card url="01-introduction" title="Part One: will cover most of the basic concepts in Spark with some demos and practical applications." icon="document-duplicate" >}})
+
+[//]: # ({{< /cards >}})
 
 [//]: # (- Part Two: there will be only 10 application videos. On the first part.)
 [//]: # (- Part Three: We will cover Dataframe/datasets and Structured APIs)

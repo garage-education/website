@@ -1,5 +1,5 @@
 ---
-title: Demo: Joining RDDs
+title: "Demo: Joining RDDs"
 weight: 25
 menu: apache-spark
 date: 2024-06-01

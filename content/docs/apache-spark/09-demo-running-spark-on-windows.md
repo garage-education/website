@@ -1,5 +1,5 @@
 ---
-title: Demo: Running Spark on Windows
+title: "Demo: Running Spark on Windows"
 weight: 9
 menu: apache-spark
 date: 2024-06-01

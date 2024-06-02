@@ -1,5 +1,5 @@
 ---
-title: Demo: Running Spark on MacOS
+title: "Demo: Running Spark on MacOS"
 weight: 8
 menu: apache-spark
 date: 2024-06-01

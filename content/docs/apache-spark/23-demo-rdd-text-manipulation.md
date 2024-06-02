@@ -1,5 +1,5 @@
 ---
-title: Demo: RDD Text Manipulation
+title: "Demo: RDD Text Manipulation"
 weight: 23
 menu: apache-spark
 date: 2024-06-01
