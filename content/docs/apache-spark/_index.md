@@ -13,7 +13,7 @@ menu:
 
 ### Ch.04-01: Introduction
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Understand the course structure and objectives.
 - Familiarize with the course references and resources.
 - Learn about the prerequisites needed for the course.
@@ -24,7 +24,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-02: Python Vs. Scala
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Compare the differences between Python and Scala in the context of Spark.
 - Understand the performance implications of using Python vs. Scala.
 - Learn about the advantages and disadvantages of each language for Spark development.
@@ -35,7 +35,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-03: Introduction
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Learn about the origin and development of Apache Spark.
 - Understand the key milestones and contributions to the Spark project.
 - Explore the unified engine design of Spark for large-scale distributed data processing.
@@ -46,7 +46,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-04: About Databricks
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Understand the role of Databricks in the Spark ecosystem.
 - Learn about Databricks' contributions to Spark development and the community.
 - Explore the capabilities of the Databricks analytics platform.
@@ -57,7 +57,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-05: Spark In The Data Platforms
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Understand the role of Spark in data platforms.
 - Learn about the technical components of a data lake.
 - Explore how Spark integrates with other big data technologies.
@@ -68,7 +68,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-06: Running Spark
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Learn the different methods for running Spark, including Databricks, local installations, and Docker.
 - Understand the steps to set up and run Spark in various environments.
 - Explore the benefits of using the Databricks Community Edition for learning and small projects.
@@ -79,7 +79,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-07: Demo: Running Spark on Linux Ubuntu
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Demonstrate the process of installing and running Spark on Linux Ubuntu.
 - Understand the configuration steps required for Spark installation on Ubuntu.
 - Explore the execution of Spark applications on a Linux environment.
@@ -90,7 +90,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-08: Demo: Running Spark on MacOS
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Demonstrate the process of installing and running Spark on macOS.
 - Understand the configuration steps required for Spark installation on macOS.
 - Explore the execution of Spark applications on a macOS environment.
@@ -101,7 +101,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-09: Demo: Running Spark on Windows
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Demonstrate the process of installing and running Spark on Windows.
 - Understand the configuration steps required for Spark installation on Windows.
 - Explore the execution of Spark applications on a Windows environment.
@@ -112,7 +112,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-10: Demo Running Spark On Databricks
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Demonstrate the process of running Spark on Databricks.
 - Understand the benefits of using Databricks for Spark workloads.
 - Explore practical examples of Spark applications running on Databricks.
@@ -123,7 +123,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-11: From Map Reduce To Spark
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Understand the basic idea and stages of MapReduce.
 - Learn about the limitations of MapReduce and the motivation for Spark.
 - Explore the improvements offered by Spark over MapReduce, including in-memory processing and optimized execution.
@@ -134,7 +134,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-12: Spark Characteristics
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Learn about the key characteristics of Spark, including speed, ease of use, modularity, and extensibility.
 - Understand how Spark achieves its high performance through hardware utilization, DAG scheduling, and the Tungsten execution engine.
 - Explore the benefits of Spark's modular and extensible architecture.
@@ -145,7 +145,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-13: Spark Applications
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Understand the components of a Spark application, including the driver and executors.
 - Learn about the execution process of Spark applications in a distributed environment.
 - Explore the different languages supported by Spark for application development.
@@ -156,7 +156,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-14: Spark Driver
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Learn about the role and key functions of the Spark driver.
 - Understand how the driver schedules and distributes tasks to executors.
 - Explore the communication and resource management responsibilities of the driver.
@@ -167,7 +167,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-15: Spark Session
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Understand the concept and purpose of a SparkSession.
 - Learn how to create and use a SparkSession in a Spark application.
 - Explore the benefits of SparkSession for simplifying Spark interactions and configurations.
@@ -178,7 +178,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-16: Spark Cluster Manager
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Understand the role of the cluster manager in Spark applications.
 - Learn about the different cluster managers supported by Spark, including Standalone, Hadoop YARN, Apache Mesos, and Kubernetes.
 - Explore the resource allocation and management responsibilities of the cluster manager.
@@ -189,7 +189,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-17: Spark Execution Mode
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Learn about the different execution modes in Spark, including cluster mode, client mode, and local mode.
 - Understand the differences and use cases for each execution mode.
 - Explore how to configure and execute Spark applications in various modes.
@@ -200,7 +200,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-18: Spark Executors
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Understand the role and functions of Spark executors.
 - Learn how executors execute tasks and communicate results.
 - Explore the resource management and lifecycle of executors in a Spark application.
@@ -211,7 +211,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-19: Spark Data Partitioning
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Learn about data distribution and partitioning in Spark.
 - Understand the benefits of partitioning for efficient parallelism and task allocation.
 - Explore practical examples of data partitioning and its impact on Spark performance.
@@ -222,7 +222,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-20: Spark Operations
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Understand the two types of Spark operations: transformations and actions.
 - Learn about the immutability of Spark operations and its implications.
 - Explore examples of transformations and actions, including lazy evaluation and its benefits.
@@ -233,7 +233,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-21: Transformations Narrow Vs Wide
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Learn about the two types of Spark transformations: narrow and wide.
 - Understand the characteristics and benefits of narrow transformations.
 - Explore the implications and performance considerations of wide transformations.
@@ -244,7 +244,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-22: Demo: Immutability In Spark
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Demonstrate the concept of immutability in Spark.
 - Understand how Spark ensures immutability and its impact on data processing.
 - Explore practical examples of immutable operations in Spark.
@@ -255,7 +255,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-23: Demo: RDD Text Manipulation
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Demonstrate text manipulation using RDDs in Spark.
 - Learn how to apply transformations and actions on text data.
 - Explore practical examples of RDD operations for text processing.
@@ -266,7 +266,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-24: Demo: GroupByKey Vs. ReduceByKey
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Compare the differences between groupByKey and reduceByKey in Spark.
 - Understand the performance implications of each operation.
 - Explore practical examples to illustrate the use cases and benefits of both operations.
@@ -277,7 +277,7 @@ In this live video, we will explain the following topics:
 
 ### Ch.04-25: Demo: Joining RDDs
 
-In this live video, we will explain the following topics:
+In this lesson, we will explain the following topics:
 - Demonstrate the process of joining RDDs in Spark.
 - Learn about the different types of joins supported by Spark.
 - Explore practical examples of RDD joins and their applications in data processing.

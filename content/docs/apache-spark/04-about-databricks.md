@@ -5,9 +5,14 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-## About Databricks
+## Lesson objectives
 
-### About Databricks
+In this lesson, we will explain the following topics:
+- Understand the role of Databricks in the Spark ecosystem.
+- Learn about Databricks' contributions to Spark development and the community.
+- Explore the capabilities of the Databricks analytics platform.
+
+## About Databricks
 
 - Databricks, founded by the early AMPlab team, joined the community to further develop Spark.
 - The organization was founded to deliver a comprehensive analytics platform, streamlining Spark's application in big data processing and analytics.
@@ -37,6 +42,12 @@ date: 2024-06-01
         - **Azure:** Azure Synapse.
         - **Databricks:** Databricks analytics platform.
 
+## Watch on Youtube
+
 {{< youtube sDbu1uSkbOc >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-04-About-Databricks.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-04-About-Databricks.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-04-About-Databricks.mp4)

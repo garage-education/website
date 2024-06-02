@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the updated content with the additional photos and captions:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Understand the role of Spark in data platforms.
+- Learn about the technical components of a data lake.
+- Explore how Spark integrates with other big data technologies.
 
 ## Apache Spark in Data Platforms
 
@@ -18,6 +23,12 @@ Here's the updated content with the additional photos and captions:
 
 ![Technical components in a data lake](../Figures/chapter-04/DataPlatform.png)
 
+## Watch on Youtube
+
 {{< youtube pGsAOLJ6nBg >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-05-Spark-In-The-Data-Platforms.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-05-Spark-In-The-Data-Platforms.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-05-Spark-In-The-Data-Platforms.mp4)

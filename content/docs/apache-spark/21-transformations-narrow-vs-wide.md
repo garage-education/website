@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Learn about the two types of Spark transformations: narrow and wide.
+- Understand the characteristics and benefits of narrow transformations.
+- Explore the implications and performance considerations of wide transformations.
 
 ## Narrow and Wide Transformations
 
@@ -56,6 +61,12 @@ Here's the converted content to Markdown:
 - **Narrow Dependencies:** A single output partition can be computed from a single input partition without data exchange.
 - **Examples:** `filter()`, `contains()` - operate independently on partitions.
 
+## Watch on Youtube
+
 {{< youtube S2RYu-jVXdQ >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-21-Transformations-Narrow-Vs-Wide.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-21-Transformations-Narrow-Vs-Wide.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-21-Transformations-Narrow-Vs-Wide.mp4)

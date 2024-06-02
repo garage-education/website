@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Understand the components of a Spark application, including the driver and executors.
+- Learn about the execution process of Spark applications in a distributed environment.
+- Explore the different languages supported by Spark for application development.
 
 # Apache Spark Distributed Execution
 
@@ -33,6 +38,12 @@ Here's the converted content to Markdown:
 ![Spark Application](../Figures/chapter-04/SparkCourse.drawio.jpg)
 *Spark the definitive guide, Ch.02*
 
+## Watch on Youtube
+
 {{< youtube bvtKXbXfwmw >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-13-Spark-Applications.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-13-Spark-Applications.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-13-Spark-Applications.mp4)

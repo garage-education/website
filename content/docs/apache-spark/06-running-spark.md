@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Learn the different methods for running Spark, including Databricks, local installations, and Docker.
+- Understand the steps to set up and run Spark in various environments.
+- Explore the benefits of using the Databricks Community Edition for learning and small projects.
 
 ## Running Spark
 
@@ -17,6 +22,12 @@ Here's the converted content to Markdown:
 
 **Note:** For those new to Spark, starting with the Databricks Community Edition is highly recommended due to its user-friendly interface and comprehensive documentation.
 
+## Watch on Youtube
+
 {{< youtube 4jNGSaBFzZk >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-06-Running-Spark.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-06-Running-Spark.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-06-Running-Spark.mp4)

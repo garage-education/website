@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Understand the concept and purpose of a SparkSession.
+- Learn how to create and use a SparkSession in a Spark application.
+- Explore the benefits of SparkSession for simplifying Spark interactions and configurations.
 
 ## Spark Distributed Execution: SparkSession
 
@@ -105,6 +110,12 @@ val spark = SparkSession
 - The examples shown are based on a blog post from Databricks.
 - URL: [https://www.databricks.com/blog/2016/08/15/how-to-use-sparksession-in-apache-spark-2-0.html](https://www.databricks.com/blog/2016/08/15/how-to-use-sparksession-in-apache-spark-2-0.html)
 
+## Watch on Youtube
+
 {{< youtube ABomIh_Z0cQ >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-15-Spark-Session.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-15-Spark-Session.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-15-Spark-Session.mp4)

@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Understand the two types of Spark operations: transformations and actions.
+- Learn about the immutability of Spark operations and its implications.
+- Explore examples of transformations and actions, including lazy evaluation and its benefits.
 
 ## Spark Operations
 
@@ -78,6 +83,12 @@ DEMO
 - **saveAsTextFile(path):** Saves the dataset to a text file at the specified path.
 - **take(n):** Returns an array with the first n elements of the dataset.
 
+## Watch on Youtube
+
 {{< youtube SDcdnkdiM04 >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-20-Spark-Operations.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-20-Spark-Operations.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-20-Spark-Operations.mp4)

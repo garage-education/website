@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-## Python vs Scala
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Compare the differences between Python and Scala in the context of Spark.
+- Understand the performance implications of using Python vs. Scala.
+- Learn about the advantages and disadvantages of each language for Spark development.
 
 ### Python vs Scala
 
@@ -45,6 +50,12 @@ date: 2024-06-01
 - Concepts like immutability and lambda are key.
 - Understanding functional programming helps in using Spark well. *Referenced from High Performance Spark, 2nd Edition, Ch.01*
 
+## Watch on Youtube
+
 {{< youtube WhgQsVKmlvE >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-02-Python-Vs-Scala.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-02-Python-Vs-Scala.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-02-Python-Vs-Scala.mp4)

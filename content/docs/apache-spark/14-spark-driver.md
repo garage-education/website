@@ -5,11 +5,14 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Learn about the role and key functions of the Spark driver.
+- Understand how the driver schedules and distributes tasks to executors.
+- Explore the communication and resource management responsibilities of the driver.
 
 ## Spark Driver
-
-### Spark Driver
 
 The driver is the process `in the driver seat.`[^1] of your Spark Application.
 
@@ -31,6 +34,12 @@ The driver is the process `in the driver seat.`[^1] of your Spark Application.
 
 ![Spark Driver Recap](../Figures/chapter-04/Mairmaid_SparkDriver.png)
 
+## Watch on Youtube
+
 {{< youtube ODcbq13Y1F0 >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-14-Spark-Driver.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-14-Spark-Driver.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-14-Spark-Driver.mp4)

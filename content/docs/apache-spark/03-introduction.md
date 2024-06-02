@@ -5,9 +5,14 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-## Introduction to Apache Spark
+## Lesson objectives
 
-### Introduction to Apache Spark
+In this lesson, we will explain the following topics:
+- Learn about the origin and development of Apache Spark.
+- Understand the key milestones and contributions to the Spark project.
+- Explore the unified engine design of Spark for large-scale distributed data processing.
+
+## Introduction to Apache Spark
 
 - Apache Spark was initiated at UC Berkeley in 2009, leading to the publication of [Spark: Cluster Computing with Working Sets](https://www1.icsi.berkeley.edu/pubs/networking/ICSI_sparkclustercomputing10.pdf) in 2010 by Matei Zaharia et al.
 - Spark was developed to improve processing efficiency over Hadoop MapReduce, which struggled with iterative tasks because it launched separate jobs and reloaded data for each one. This was particularly important for machine learning algorithms that need multiple data passes.
@@ -28,7 +33,13 @@ date: 2024-06-01
     - Structured Streaming: for stream processing with near real-time data.
     - GraphX: for graph processing.
 - **Optimized Execution Engine**: Spark's Catalyst optimizer and `Tungsten execution engine` optimize execution plans and generate efficient code for execution.
-- 
-{{< youtube MiTOvM85WKk >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-03-Introduction.mp4)
+## Watch on Youtube
+
+{{< youtube WhgQsVKmlvE >}}
+
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-03-Introduction.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-03-Introduction.mp4)

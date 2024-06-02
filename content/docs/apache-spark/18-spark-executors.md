@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Understand the role and functions of Spark executors.
+- Learn how executors execute tasks and communicate results.
+- Explore the resource management and lifecycle of executors in a Spark application.
 
 ## Spark Executors
 
@@ -16,6 +21,12 @@ Here's the converted content to Markdown:
 - Typically, one executor runs per node in most deployment modes.
 - Executors' main function: Execute tasks, return status, and communicate outcomes.
 
+## Watch on Youtube
+
 {{< youtube Ktg9MWbwPMY >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-18-Spark-Executors.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-18-Spark-Executors.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-18-Spark-Executors.mp4)

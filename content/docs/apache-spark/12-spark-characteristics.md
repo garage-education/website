@@ -4,7 +4,12 @@ weight: 12
 menu: apache-spark
 date: 2024-06-01
 ---
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Learn about the key characteristics of Spark, including speed, ease of use, modularity, and extensibility.
+- Understand how Spark achieves its high performance through hardware utilization, DAG scheduling, and the Tungsten execution engine.
+- Explore the benefits of Spark's modular and extensible architecture.
 
 ## Spark Characteristics
 
@@ -49,6 +54,12 @@ Here's the converted content to Markdown:
 - Spark's `DataFrameReader`s and `DataFrameWriter`s allow Spark to interact with even more data sources, such as Kafka, Kinesis, Azure Storage, and Amazon S3.
 - The Spark community maintains a list of third-party packages, enhancing its ecosystem with connectors for external data sources, performance monitors, and more.
 
+## Watch on Youtube
+
 {{< youtube KNHZoKgAqXw >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-12-Spark-Characteristics.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-12-Spark-Characteristics.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-12-Spark-Characteristics.mp4)

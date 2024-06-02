@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Understand the role of the cluster manager in Spark applications.
+- Learn about the different cluster managers supported by Spark, including Standalone, Hadoop YARN, Apache Mesos, and Kubernetes.
+- Explore the resource allocation and management responsibilities of the cluster manager.
 
 ## Cluster Manager
 
@@ -31,6 +36,12 @@ Here's the converted content to Markdown:
 - The user configures the application to specify resources for the driver or only for executors.
 - The cluster manager directly manages the machines during the execution of the application.
 
+## Watch on Youtube
+
 {{< youtube Ew51l2veVxE >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-16-Spark-Cluster-Manager.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-16-Spark-Cluster-Manager.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-16-Spark-Cluster-Manager.mp4)

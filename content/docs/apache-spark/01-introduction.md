@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Course Introduction
 weight: 1
 menu: apache-spark
 date: 2024-06-01
@@ -31,7 +31,12 @@ Before beginning this course, participants should have:
 - Basic programming skills using shell.
 - An understanding of MapReduce foundations and Hive. [Garage Education YouTube Playlist](https://www.youtube.com/playlist?list=PLxNoJq6k39G8Ak39PDC-oYvp6ZRvIn3Pa)
 
+## Watch on Youtube
 
 {{< youtube 58ULZD86iPo >}}
+
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-01-Introduction.mp4" controls="yes" >}}
 
 You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-01-Introduction.mp4)

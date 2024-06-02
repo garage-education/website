@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Learn about data distribution and partitioning in Spark.
+- Understand the benefits of partitioning for efficient parallelism and task allocation.
+- Explore practical examples of data partitioning and its impact on Spark performance.
 
 ## Data Partition
 
@@ -47,6 +52,12 @@ This creates a DataFrame of 10,000 integers over eight partitions in memory.
 
 - **Key Takeaway:** Efficient data partitioning is crucial for optimizing processing in Spark.
 
+## Watch on Youtube
+
 {{< youtube uAq86RhbNys >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-19-Spark-Data-Partitioning.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-19-Spark-Data-Partitioning.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-19-Spark-Data-Partitioning.mp4)

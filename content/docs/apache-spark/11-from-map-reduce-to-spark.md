@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Understand the basic idea and stages of MapReduce.
+- Learn about the limitations of MapReduce and the motivation for Spark.
+- Explore the improvements offered by Spark over MapReduce, including in-memory processing and optimized execution.
 
 ## From MapReduce to Apache Spark
 
@@ -62,6 +67,12 @@ We’ll combine the ingredients into a sandwich.
 - Caching: Spark allows for the caching of intermediate data in memory, benefiting iterative algorithms that reuse data, thereby avoiding repetitive disk access.
 - Advanced Optimization (Catalyst optimizer and Tungsten): With components like the Catalyst optimizer and Tungsten for memory and CPU efficiency, Spark streamlines execution, making it ideal for fast, iterative processing over big data.
 
+## Watch on Youtube
+
 {{< youtube uMf8dCcQoBQ >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-11-From-Map-Reduce-To-Spark.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-11-From-Map-Reduce-To-Spark.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-11-From-Map-Reduce-To-Spark.mp4)

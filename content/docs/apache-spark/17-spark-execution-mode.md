@@ -5,7 +5,12 @@ menu: apache-spark
 date: 2024-06-01
 ---
 
-Here's the converted content to Markdown:
+## Lesson objectives
+
+In this lesson, we will explain the following topics:
+- Learn about the different execution modes in Spark, including cluster mode, client mode, and local mode.
+- Understand the differences and use cases for each execution mode.
+- Explore how to configure and execute Spark applications in various modes.
 
 ## Execution Modes
 
@@ -56,6 +61,12 @@ Here's the converted content to Markdown:
 - Ideal for learning, testing, or local development.
 - Not recommended for production use.
 
+## Watch on Youtube
+
 {{< youtube Q5EH1rHIdBM >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-17-Spark-Execution-Mode.mp4)
+## Watch on our Servers
+
+{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-17-Spark-Execution-Mode.mp4" controls="yes" >}}
+
+You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-17-Spark-Execution-Mode.mp4)
