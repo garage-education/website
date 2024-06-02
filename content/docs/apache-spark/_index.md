@@ -110,6 +110,17 @@ In this live video, we will explain the following topics:
 [Watch on YouTube](https://www.youtube.com/watch?v=KYU_yq3ESXE) |
 [Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-09-Demo-Running-Spark-on-Windows.mp4)
 
+### Ch.04-10: Demo Running Spark On Databricks
+
+In this live video, we will explain the following topics:
+- Demonstrate the process of running Spark on Databricks.
+- Understand the benefits of using Databricks for Spark workloads.
+- Explore practical examples of Spark applications running on Databricks.
+
+[Go to lesson]({{< relref "docs/apache-spark/10-demo-running-spark-on-databricks" >}}) |
+[Watch on YouTube](https://www.youtube.com/watch?v=fU6PZAc8h1I) |
+[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-10-Demo-Running-Spark-on-Databricks.mp4)
+
 ### Ch.04-11: From Map Reduce To Spark
 
 In this live video, we will explain the following topics:
