@@ -31,6 +31,7 @@ In this live video, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/02-python-vs-scala" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=WhgQsVKmlvE)
+[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-02-python-vs-scala.mp4)
 
 ### Ch.04-03: Introduction
 
