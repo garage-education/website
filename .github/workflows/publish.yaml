@@ -91,4 +91,4 @@ jobs:
         # The region of the S3 bucket
         region: "eu-west-1"
         # Absolute path of the folder containing the deployable files
-        # folder: # optional, default is .
+        folder: public
