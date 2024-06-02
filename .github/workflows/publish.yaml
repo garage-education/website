@@ -81,6 +81,7 @@ jobs:
         aws sts get-caller-identity
     - name: Deploy to AWS S3
       run: |
+        cd ..
         ls
         pwd
         aws s3 sync public s3://www.garageeducation.org --delete
