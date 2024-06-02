@@ -1,0 +1,252 @@
+{
+  "Ch.04-01": {
+    "video_id": "58ULZD86iPo",
+    "title": "Ch.04-01: Introduction to Apache Spark",
+    "objectives": [
+      "Understand the course structure and objectives.",
+      "Familiarize with the course references and resources.",
+      "Learn about the prerequisites needed for the course."
+    ],
+    "video_link": "01-introduction"
+  },
+  "Ch.04-02": {
+    "video_id": "WhgQsVKmlvE",
+    "title": "Ch.04-02: Python Vs. Scala",
+    "objectives": [
+      "Compare the differences between Python and Scala in the context of Spark.",
+      "Understand the performance implications of using Python vs. Scala.",
+      "Learn about the advantages and disadvantages of each language for Spark development."
+    ],
+    "video_link": "02-python-vs-scala"
+  },
+  "Ch.04-03": {
+    "video_id": "MiTOvM85WKk",
+    "title": "Ch.04-03: Introduction to Apache Spark",
+    "objectives": [
+      "Learn about the origin and development of Apache Spark.",
+      "Understand the key milestones and contributions to the Spark project.",
+      "Explore the unified engine design of Spark for large-scale distributed data processing."
+    ],
+    "video_link": "03-introduction"
+  },
+  "Ch.04-04": {
+    "video_id": "sDbu1uSkbOc",
+    "title": "Ch.04-04: About Databricks",
+    "objectives": [
+      "Understand the role of Databricks in the Spark ecosystem.",
+      "Learn about Databricks' contributions to Spark development and the community.",
+      "Explore the capabilities of the Databricks analytics platform."
+    ],
+    "video_link": "04-about-databricks"
+  },
+  "Ch.04-05": {
+    "video_id": "pGsAOLJ6nBg",
+    "title": "Ch.04-05: Spark In The Data Platforms",
+    "objectives": [
+      "Understand the role of Spark in data platforms.",
+      "Learn about the technical components of a data lake.",
+      "Explore how Spark integrates with other big data technologies."
+    ],
+    "video_link": "05-spark-in-the-data-platforms"
+  },
+  "Ch.04-06": {
+    "video_id": "4jNGSaBFzZk",
+    "title": "Ch.04-06: Running Spark",
+    "objectives": [
+      "Learn the different methods for running Spark, including Databricks, local installations, and Docker.",
+      "Understand the steps to set up and run Spark in various environments.",
+      "Explore the benefits of using the Databricks Community Edition for learning and small projects."
+    ],
+    "video_link": "06-running-spark"
+  },
+  "Ch.04-07": {
+    "video_id": "Oz_3u_NIS2w",
+    "title": "Ch.04-07: Demo: Running Spark on Linux Ubuntu",
+    "objectives": [
+      "Demonstrate the process of installing and running Spark on Linux Ubuntu.",
+      "Understand the configuration steps required for Spark installation on Ubuntu.",
+      "Explore the execution of Spark applications on a Linux environment."
+    ],
+    "video_link": "07-demo-running-spark-on-linux-ubuntu"
+  },
+  "Ch.04-08": {
+    "video_id": "JabcoTV8nJE",
+    "title": "Ch.04-08: Demo: Running Spark on MacOS",
+    "objectives": [
+      "Demonstrate the process of installing and running Spark on macOS.",
+      "Understand the configuration steps required for Spark installation on macOS.",
+      "Explore the execution of Spark applications on a macOS environment."
+    ],
+    "video_link": "08-demo-running-spark-on-macos"
+  },
+  "Ch.04-09": {
+    "video_id": "KYU_yq3ESXE",
+    "title": "Ch.04-09: Demo: Running Spark on Windows",
+    "objectives": [
+      "Demonstrate the process of installing and running Spark on Windows.",
+      "Understand the configuration steps required for Spark installation on Windows.",
+      "Explore the execution of Spark applications on a Windows environment."
+    ],
+    "video_link": "09-demo-running-spark-on-windows"
+  },
+  "Ch.04-10": {
+    "video_id": "fU6PZAc8h1I",
+    "title": "Ch.04-10: Demo: Running Spark on Databricks",
+    "objectives": [
+      "Demonstrate the process of running Spark on Databricks.",
+      "Understand the benefits of using Databricks for Spark workloads.",
+      "Explore practical examples of Spark applications running on Databricks."
+    ],
+    "video_link": "10-demo-running-spark-on-databricks"
+  },
+  "Ch.04-11": {
+    "video_id": "uMf8dCcQoBQ",
+    "title": "Ch.04-11: From Map Reduce To Spark",
+    "objectives": [
+      "Understand the basic idea and stages of MapReduce.",
+      "Learn about the limitations of MapReduce and the motivation for Spark.",
+      "Explore the improvements offered by Spark over MapReduce, including in-memory processing and optimized execution."
+    ],
+    "video_link": "11-from-map-reduce-to-spark"
+  },
+  "Ch.04-12": {
+    "video_id": "KNHZoKgAqXw",
+    "title": "Ch.04-12: Spark Characteristics",
+    "objectives": [
+      "Learn about the key characteristics of Spark, including speed, ease of use, modularity, and extensibility.",
+      "Understand how Spark achieves its high performance through hardware utilization, DAG scheduling, and the Tungsten execution engine.",
+      "Explore the benefits of Spark's modular and extensible architecture."
+    ],
+    "video_link": "12-spark-characteristics"
+  },
+  "Ch.04-13": {
+    "video_id": "bvtKXbXfwmw",
+    "title": "Ch.04-13: Spark Applications",
+    "objectives": [
+      "Understand the components of a Spark application, including the driver and executors.",
+      "Learn about the execution process of Spark applications in a distributed environment.",
+      "Explore the different languages supported by Spark for application development."
+    ],
+    "video_link": "13-spark-applications"
+  },
+  "Ch.04-14": {
+    "video_id": "ODcbq13Y1F0",
+    "title": "Ch.04-14: Spark Driver",
+    "objectives": [
+      "Learn about the role and key functions of the Spark driver.",
+      "Understand how the driver schedules and distributes tasks to executors.",
+      "Explore the communication and resource management responsibilities of the driver."
+    ],
+    "video_link": "14-spark-driver"
+  },
+  "Ch.04-15": {
+    "video_id": "ABomIh_Z0cQ",
+    "title": "Ch.04-15: Spark Session",
+    "objectives": [
+      "Understand the concept and purpose of a SparkSession.",
+      "Learn how to create and use a SparkSession in a Spark application.",
+      "Explore the benefits of SparkSession for simplifying Spark interactions and configurations."
+    ],
+    "video_link": "15-spark-session"
+  },
+  "Ch.04-16": {
+    "video_id": "Ew51l2veVxE",
+    "title": "Ch.04-16: Spark Cluster Manager",
+    "objectives": [
+      "Understand the role of the cluster manager in Spark applications.",
+      "Learn about the different cluster managers supported by Spark, including Standalone, Hadoop YARN, Apache Mesos, and Kubernetes.",
+      "Explore the resource allocation and management responsibilities of the cluster manager."
+    ],
+    "video_link": "16-spark-cluster-manager"
+  },
+  "Ch.04-17": {
+    "video_id": "Q5EH1rHIdBM",
+    "title": "Ch.04-17: Spark Execution Mode",
+    "objectives": [
+      "Learn about the different execution modes in Spark, including cluster mode, client mode, and local mode.",
+      "Understand the differences and use cases for each execution mode.",
+      "Explore how to configure and execute Spark applications in various modes."
+    ],
+    "video_link": "17-spark-execution-mode"
+  },
+  "Ch.04-18": {
+    "video_id": "Ktg9MWbwPMY",
+    "title": "Ch.04-18: Spark Executors",
+    "objectives": [
+      "Understand the role and functions of Spark executors.",
+      "Learn how executors execute tasks and communicate results.",
+      "Explore the resource management and lifecycle of executors in a Spark application."
+    ],
+    "video_link": "18-spark-executors"
+  },
+  "Ch.04-19": {
+    "video_id": "uAq86RhbNys",
+    "title": "Ch.04-19: Spark Data Partitioning",
+    "objectives": [
+      "Learn about data distribution and partitioning in Spark.",
+      "Understand the benefits of partitioning for efficient parallelism and task allocation.",
+      "Explore practical examples of data partitioning and its impact on Spark performance."
+    ],
+    "video_link": "19-spark-data-partitioning"
+  },
+  "Ch.04-20": {
+    "video_id": "SDcdnkdiM04",
+    "title": "Ch.04-20: Spark Operations",
+    "objectives": [
+      "Understand the two types of Spark operations: transformations and actions.",
+      "Learn about the immutability of Spark operations and its implications.",
+      "Explore examples of transformations and actions, including lazy evaluation and its benefits."
+    ],
+    "video_link": "20-spark-operations"
+  },
+  "Ch.04-21": {
+    "video_id": "S2RYu-jVXdQ",
+    "title": "Ch.04-21: Transformations Narrow Vs Wide",
+    "objectives": [
+      "Learn about the two types of Spark transformations: narrow and wide.",
+      "Understand the characteristics and benefits of narrow transformations.",
+      "Explore the implications and performance considerations of wide transformations."
+    ],
+    "video_link": "21-transformations-narrow-vs-wide"
+  },
+  "Ch.04-22": {
+    "video_id": "P0PGbRYHCYQ",
+    "title": "Ch.04-22: Demo: Immutability In Spark",
+    "objectives": [
+      "Demonstrate the concept of immutability in Spark.",
+      "Understand how Spark ensures immutability in its data structures.",
+      "Explore practical examples of immutable operations in Spark."
+    ],
+    "video_link": "22-demo-immutability-in-spark"
+  },
+  "Ch.04-23": {
+    "video_id": "zGvYGJNTfvs",
+    "title": "Ch.04-23: Demo: RDD Text Manipulation",
+    "objectives": [
+      "Demonstrate text manipulation using RDDs in Spark.",
+      "Understand the common text processing operations in Spark.",
+      "Explore practical examples of RDD transformations for text manipulation."
+    ],
+    "video_link": "23-demo-rdd-text-manipulation"
+  },
+  "Ch.04-24": {
+    "video_id": "WaYbKVNjme0",
+    "title": "Ch.04-24: Demo: GroupByKey Vs. ReduceByKey",
+    "objectives": [
+      "Compare the GroupByKey and ReduceByKey operations in Spark.",
+      "Understand the use cases and performance implications of each operation.",
+      "Explore practical examples of grouping and reducing data in Spark."
+    ],
+    "video_link": "24-demo-groupbykey-vs-reducebykey"
+  },
+  "Ch.04-25": {
+    "video_id": "ONekPlyAcuY",
+    "title": "Ch.04-25: Demo: Joining RDDs",
+    "objectives": [
+      "Demonstrate the process of joining RDDs in Spark.",
+      "Understand the different types of joins supported by Spark.",
+      "Explore practical examples of join operations and their performance considerations."
+    ],
+    "video_link": "25-demo-joining-rdds"
+  }
+}
