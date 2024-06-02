@@ -9,6 +9,10 @@ menu:
     weight: 1
 ---
 
+## Course Presentation
+
+You can download the course presentation by right clicking the link and chose save link as: [Download Presentation](./main.pdf)
+
 {{% steps %}}
 
 ### Ch.04-01: Introduction
