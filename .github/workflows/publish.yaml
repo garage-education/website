@@ -79,7 +79,6 @@ jobs:
     - name: Sts GetCallerIdentity
       run: |
         aws sts get-caller-identity
-
     - name: Deploy to AWS S3
       # You may pin to the exact commit or the version.
       # uses: nick-y-ito/gha-s3-deploy@287dafecede277757bf90d45112c2e4c21f28012
