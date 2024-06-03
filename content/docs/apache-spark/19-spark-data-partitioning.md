@@ -58,6 +58,6 @@ This creates a DataFrame of 10,000 integers over eight partitions in memory.
 
 ## Watch on our Servers
 
-{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-19-Spark-Data-Partitioning.mp4" controls="yes" >}}
+{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-19-Spark-Data-Partitioning.mp4" controls="yes" >}}
 
-You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-19-Spark-Data-Partitioning.mp4)
+You can download the videog the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-19-Spark-Data-Partitioning.mp4)

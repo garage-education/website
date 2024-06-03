@@ -76,6 +76,6 @@ source ~/.bashrc
 
 ## Watch on our Servers
 
-{{< video src="https://garage-education.s3.amazonaws.com/spark-course/Ch.04-07-Demo-Running-Spark-on-Linux-Ubuntu.mp4" controls="yes" >}}
+{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-07-Demo-Running-Spark-on-Linux-Ubuntu.mp4" controls="yes" >}}
 
-You can download the videog the link and chose save link as: [Download Video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-07-Demo-Running-Spark-on-Linux-Ubuntu.mp4)
+You can download the videog the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-07-Demo-Running-Spark-on-Linux-Ubuntu.mp4)

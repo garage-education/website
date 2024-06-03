@@ -24,7 +24,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/01-introduction" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=58ULZD86iPo) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-01-Introduction.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-01-Introduction.mp4)
 
 ### Ch.04-02: Python Vs. Scala
 
@@ -35,7 +35,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/02-python-vs-scala" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=WhgQsVKmlvE)
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-02-python-vs-scala.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-02-python-vs-scala.mp4)
 
 ### Ch.04-03: Introduction
 
@@ -46,7 +46,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/03-introduction" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=MiTOvM85WKk) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-03-Introduction.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-03-Introduction.mp4)
 
 ### Ch.04-04: About Databricks
 
@@ -57,7 +57,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/04-about-databricks" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=sDbu1uSkbOc) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-04-About-Databricks.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-04-About-Databricks.mp4)
 
 ### Ch.04-05: Spark In The Data Platforms
 
@@ -68,7 +68,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/05-spark-in-the-data-platforms" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=pGsAOLJ6nBg) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-05-Spark-In-The-Data-Platforms.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-05-Spark-In-The-Data-Platforms.mp4)
 
 ### Ch.04-06: Running Spark
 
@@ -79,7 +79,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/06-running-spark" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=4jNGSaBFzZk) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-06-Running-Spark.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-06-Running-Spark.mp4)
 
 ### Ch.04-07: Demo: Running Spark on Linux Ubuntu
 
@@ -90,7 +90,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/07-demo-running-spark-on-linux-ubuntu" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=Oz_3u_NIS2w) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-07-Demo-Running-Spark-on-Linux-Ubuntu.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-07-Demo-Running-Spark-on-Linux-Ubuntu.mp4)
 
 ### Ch.04-08: Demo: Running Spark on MacOS
 
@@ -101,7 +101,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/08-demo-running-spark-on-macos" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=JabcoTV8nJE) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-08-Demo-Running-Spark-on-MacOS.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-08-Demo-Running-Spark-on-MacOS.mp4)
 
 ### Ch.04-09: Demo: Running Spark on Windows
 
@@ -112,7 +112,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/09-demo-running-spark-on-windows" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=KYU_yq3ESXE) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-09-Demo-Running-Spark-on-Windows.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-09-Demo-Running-Spark-on-Windows.mp4)
 
 ### Ch.04-10: Demo Running Spark On Databricks
 
@@ -123,7 +123,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/10-demo-running-spark-on-databricks" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=fU6PZAc8h1I) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-10-Demo-Running-Spark-on-Databricks.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-10-Demo-Running-Spark-on-Databricks.mp4)
 
 ### Ch.04-11: From Map Reduce To Spark
 
@@ -134,7 +134,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/11-from-map-reduce-to-spark" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=uMf8dCcQoBQ) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-11-From-Map-Reduce-To-Spark.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-11-From-Map-Reduce-To-Spark.mp4)
 
 ### Ch.04-12: Spark Characteristics
 
@@ -145,7 +145,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/12-spark-characteristics" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=KNHZoKgAqXw) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-12-Spark-Characteristics.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-12-Spark-Characteristics.mp4)
 
 ### Ch.04-13: Spark Applications
 
@@ -156,7 +156,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/13-spark-applications" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=bvtKXbXfwmw) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-13-Spark-Applications.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-13-Spark-Applications.mp4)
 
 ### Ch.04-14: Spark Driver
 
@@ -167,7 +167,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/14-spark-driver" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=ODcbq13Y1F0) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-14-Spark-Driver.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-14-Spark-Driver.mp4)
 
 ### Ch.04-15: Spark Session
 
@@ -178,7 +178,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/15-spark-session" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=ABomIh_Z0cQ) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-15-Spark-Session.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-15-Spark-Session.mp4)
 
 ### Ch.04-16: Spark Cluster Manager
 
@@ -189,7 +189,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/16-spark-cluster-manager" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=Ew51l2veVxE) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-16-Spark-Cluster-Manager.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-16-Spark-Cluster-Manager.mp4)
 
 ### Ch.04-17: Spark Execution Mode
 
@@ -200,7 +200,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/17-spark-execution-mode" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=Q5EH1rHIdBM) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-17-Spark-Execution-Mode.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-17-Spark-Execution-Mode.mp4)
 
 ### Ch.04-18: Spark Executors
 
@@ -211,7 +211,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/18-spark-executors" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=Ktg9MWbwPMY) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-18-Spark-Executors.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-18-Spark-Executors.mp4)
 
 ### Ch.04-19: Spark Data Partitioning
 
@@ -222,7 +222,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/19-spark-data-partitioning" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=uAq86RhbNys) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-19-Spark-Data-Partitioning.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-19-Spark-Data-Partitioning.mp4)
 
 ### Ch.04-20: Spark Operations
 
@@ -233,7 +233,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/20-spark-operations" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=SDcdnkdiM04) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-20-Spark-Operations.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-20-Spark-Operations.mp4)
 
 ### Ch.04-21: Transformations Narrow Vs Wide
 
@@ -244,7 +244,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/21-transformations-narrow-vs-wide" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=S2RYu-jVXdQ) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-21-Transformations-Narrow-Vs-Wide.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-21-Transformations-Narrow-Vs-Wide.mp4)
 
 ### Ch.04-22: Demo: Immutability In Spark
 
@@ -255,7 +255,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/22-demo-immutability-in-spark" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=P0PGbRYHCYQ) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-22-Demo-Immutability-In-Spark.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-22-Demo-Immutability-In-Spark.mp4)
 
 ### Ch.04-23: Demo: RDD Text Manipulation
 
@@ -266,7 +266,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/23-demo-rdd-text-manipulation" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=zGvYGJNTfvs) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-23-Demo-RDD-Text-Manipulation.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-23-Demo-RDD-Text-Manipulation.mp4)
 
 ### Ch.04-24: Demo: GroupByKey Vs. ReduceByKey
 
@@ -277,7 +277,7 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/24-demo-groupbykey-vs-reducebykey" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=WaYbKVNjme0) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-24-Demo-GroupByKey-Vs-ReduceByKey.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-24-Demo-GroupByKey-Vs-ReduceByKey.mp4)
 
 ### Ch.04-25: Demo: Joining RDDs
 
@@ -288,6 +288,6 @@ In this lesson, we will explain the following topics:
 
 [Go to lesson]({{< relref "docs/apache-spark/25-demo-joining-rdds" >}}) |
 [Watch on YouTube](https://www.youtube.com/watch?v=ONekPlyAcuY) |
-[Download the video](https://garage-education.s3.amazonaws.com/spark-course/Ch.04-25-Demo-Joining-RDDs.mp4)
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-25-Demo-Joining-RDDs.mp4)
 
 {{% /steps %}}
