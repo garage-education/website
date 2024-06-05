@@ -290,4 +290,27 @@ In this lesson, we will explain the following topics:
 [Watch on YouTube](https://www.youtube.com/watch?v=ONekPlyAcuY) |
 [Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-25-Demo-Joining-RDDs.mp4)
 
+
+### Ch.04-26: Demo: RDD Operations Part 1
+
+In this lesson, we will explain the following topics:
+- Demonstrate the use of Spark RDD APIs, including map, flatMap, filter, reduce, groupBy, groupByKey, and reduceByKey for data transformation, extraction, organization, and reduction.
+- Learn to apply various operations for efficient data processing and aggregation.
+- Showcase how to navigate and utilize the Spark documentation effectively.
+
+[Go to lesson]({{< relref "docs/apache-spark/26-demo-rdd-operations-part-1" >}}) |
+[Watch on YouTube](https://www.youtube.com/watch?v=tAg3R8gQezg) |
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-26-Demo-RDD-API-Part-1.mp4)
+
+### Ch.04-27: Demo: Repartition Vs. Coalesce
+
+In this lesson, we will explain the following topics:
+- Explain in detail the difference between repartition and coalesce in Spark RDD APIs.
+- Analyze the Spark source code implementation for repartition and coalesce to understand their differences.
+- Demonstrate practical examples of how to use repartition and coalesce functions in Spark.
+
+[Go to lesson]({{< relref "docs/apache-spark/27-demo-repartition-vs-coalesce" >}}) |
+[Watch on YouTube](https://www.youtube.com/watch?v=u4GOzW01tNA) |
+[Download the video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-27-Demo-Repartition-Vs-Coalesce.mp4)
+
 {{% /steps %}}
