@@ -52,9 +52,9 @@ print(f"Reduced RDD result: {reduced_result[:10]}")  # Display only the first 10
 
 ## Watch on our Servers
 
-{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-24-Demo-GroupByKey-Vs-ReduceByKey.mp4" controls="yes" >}}
+{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Videos/Ch.04-24-Demo-GroupByKey-Vs-ReduceByKey.mp4" controls="yes" >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-24-Demo-GroupByKey-Vs-ReduceByKey.mp4)
+You can download the video by right clicking the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Videos/Ch.04-24-Demo-GroupByKey-Vs-ReduceByKey.mp4)
 
 ## Download the code
 

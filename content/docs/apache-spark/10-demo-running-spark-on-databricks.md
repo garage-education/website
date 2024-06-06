@@ -81,10 +81,10 @@ display(results)
 
 ## Watch on our Servers
 
-{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-10-Demo-Running-Spark-on-Databricks.mp4" controls="yes" >}}
+{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Videos/Ch.04-10-Demo-Running-Spark-on-Databricks.mp4" controls="yes" >}}
 
 ## Download the video from our Servers
-You can download the video the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-10-Demo-Running-Spark-on-Databricks.mp4)
+You can download the video the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Videos/Ch.04-10-Demo-Running-Spark-on-Databricks.mp4)
 
 ## Download the code
 

@@ -198,9 +198,9 @@ print(f"Number of joined records = {part_joined_partsupp.count()}")
 
 ## Watch on our Servers
 
-{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-25-Demo-Joining-RDDs.mp4" controls="yes" >}}
+{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Videos/Ch.04-25-Demo-Joining-RDDs.mp4" controls="yes" >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-25-Demo-Joining-RDDs.mp4)
+You can download the video by right clicking the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Videos/Ch.04-25-Demo-Joining-RDDs.mp4)
 
 ## Download the code
 

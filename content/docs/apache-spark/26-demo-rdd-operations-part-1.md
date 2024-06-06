@@ -227,9 +227,9 @@ print("example_distinct example (unique words):", example__distinct)
 
 ## Watch on our Servers
 
-{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-26-Demo-RDD-API-Part-1.mp4" controls="yes" >}}
+{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Videos/Ch.04-26-Demo-RDD-API-Part-1.mp4" controls="yes" >}}
 
-You can download the video by right clicking the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-26-Demo-RDD-API-Part-1.mp4)
+You can download the video by right clicking the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Videos/Ch.04-26-Demo-RDD-API-Part-1.mp4)
 
 ## Download the code
 

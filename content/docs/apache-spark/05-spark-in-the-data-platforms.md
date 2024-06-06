@@ -29,6 +29,6 @@ In this lesson, we will explain the following topics:
 
 ## Watch on our Servers
 
-{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-05-Spark-In-The-Data-Platforms.mp4" controls="yes" >}}
+{{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Videos/Ch.04-05-Spark-In-The-Data-Platforms.mp4" controls="yes" >}}
 
-You can download the videog the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-05-Spark-In-The-Data-Platforms.mp4)
+You can download the videog the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Videos/Ch.04-05-Spark-In-The-Data-Platforms.mp4)
