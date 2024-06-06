@@ -12,6 +12,31 @@ In this lesson, we will explain the following topics:
 - Learn how to apply transformations and actions on text data.
 - Explore practical examples of RDD operations for text processing.
 
+## DEMO
+
+### Example: Text Manipulation RDD
+
+```python
+text = ["Hello Spark", "Hello Scala", "Hello World"]
+text_rdd = sc.parallelize(text)
+print(f"Original Text RDD result: {text_rdd.take(10)}")
+
+```
+
+```python
+
+words_rdd = text_rdd.flatMap(lambda line: line.split(" "))
+print(f"Words RDD result: {words_rdd.take(10)}")
+
+```
+
+```python
+
+upper_words_rdd = words_rdd.map(lambda word: word.upper())
+print(f"Upper Words RDD result: {upper_words_rdd.take(10)}")
+
+```
+
 ## Watch on Youtube
 
 {{< youtube zGvYGJNTfvs >}}
