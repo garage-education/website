@@ -19,6 +19,7 @@ In this lesson, we will explain the following topics:
        style="border:none;">
  </iframe> -->
 { {< notebook "./Code/repartition-vs-coalesce>" 1200 >} }
+{ {< pybook "./Code/repartition-vs-coalesce>" 2750 >} }
 
 ## Watch on Youtube
 
