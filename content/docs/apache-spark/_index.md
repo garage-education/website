@@ -11,7 +11,7 @@ menu:
 
 ## Course Presentation
 
-You can download the course presentation by right clicking the link and chose save link as: [Download Presentation](./main.pdf)
+You can download the course presentation by right clicking the link and chose save link as: [Download Presentation](https://dn8min85zvx9p.cloudfront.net/spark-course/Presentation/main.pdf)
 
 {{% steps %}}
 
