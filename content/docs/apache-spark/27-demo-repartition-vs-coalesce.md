@@ -12,14 +12,6 @@ In this lesson, we will explain the following topics:
 - Analyze the Spark source code implementation for repartition and coalesce to understand their differences.
 - Demonstrate practical examples of how to use repartition and coalesce functions in Spark.
 
- <!-- <iframe
-       src="./Code/repartition-vs-coalesce>"
-       width="90%"
-       height="1000px"
-       style="border:none;">
- </iframe>
-{ {< notebook "../Code/repartition-vs-coalesce>" 1200 >} }
- -->
 ## Watch on Youtube
 
 {{< youtube u4GOzW01tNA >}}
