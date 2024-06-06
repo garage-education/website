@@ -17,9 +17,9 @@ In this lesson, we will explain the following topics:
        width="90%"
        height="1000px"
        style="border:none;">
- </iframe> -->
+ </iframe>
 { {< notebook "../Code/repartition-vs-coalesce>" 1200 >} }
-
+ -->
 ## Watch on Youtube
 
 {{< youtube u4GOzW01tNA >}}
