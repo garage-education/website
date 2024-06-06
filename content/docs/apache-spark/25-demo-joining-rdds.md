@@ -201,3 +201,12 @@ print(f"Number of joined records = {part_joined_partsupp.count()}")
 {{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-25-Demo-Joining-RDDs.mp4" controls="yes" >}}
 
 You can download the video by right clicking the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-25-Demo-Joining-RDDs.mp4)
+
+## Download the code
+
+You can download the Jupyter notebook, Databricks Notebook, or the Python source code using the following links:
+
+- [Jupyter Notebook `.ipynb`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/25-Join-RDDs/25-Joining-RDDs.ipynb)
+- [Databricks Notebook `.dbc`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/25-Join-RDDs/25-Joining-RDDs.dbc)
+- [Python Source Code `.py`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/25-Join-RDDs/25-Joining-RDDs.py)
+

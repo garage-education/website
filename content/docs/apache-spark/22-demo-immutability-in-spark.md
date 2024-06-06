@@ -160,3 +160,12 @@ display(results)
 {{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-22-Demo-Immutability-In-Spark.mp4" controls="yes" >}}
 
 You can download the videog the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-22-Demo-Immutability-In-Spark.mp4)
+
+
+## Download the code
+
+You can download the Jupyter notebook, Databricks Notebook, or the Python source code using the following links:
+
+- [Jupyter Notebook `.ipynb`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/22-spark-immutability/22-spark-immutablility-example.ipynb)
+- [Databricks Notebook `.dbc`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/22-spark-immutability/22-spark-immutablility-example.dbc)
+- [Python Source Code `.py`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/22-spark-immutability/22-spark-immutablility-example.py)

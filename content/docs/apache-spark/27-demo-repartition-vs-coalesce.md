@@ -100,3 +100,12 @@ print(f"new_partitions_2 after Coalesce: {new_partitions_2}")
 {{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-27-Demo-Repartition-Vs-Coalesce.mp4" controls="yes" >}}
 
 You can download the video by right clicking the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-27-Demo-Repartition-Vs-Coalesce.mp4)
+
+
+## Download the code
+
+You can download the Jupyter notebook, Databricks Notebook, or the Python source code using the following links:
+
+- [Jupyter Notebook `.ipynb`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/27-repartition-vs-coalesce/repartition-vs-coalesce.ipynb)
+- [Databricks Notebook `.dbc`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/27-repartition-vs-coalesce/repartition-vs-coalesce.dbc)
+- [Python Source Code `.py`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/27-repartition-vs-coalesce/repartition-vs-coalesce.py)

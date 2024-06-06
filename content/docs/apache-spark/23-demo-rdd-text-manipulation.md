@@ -46,3 +46,12 @@ print(f"Upper Words RDD result: {upper_words_rdd.take(10)}")
 {{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-23-Demo-RDD-Text-Manipulation.mp4" controls="yes" >}}
 
 You can download the video by right clicking the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-23-Demo-RDD-Text-Manipulation.mp4)
+
+
+## Download the code
+
+You can download the Jupyter notebook, Databricks Notebook, or the Python source code using the following links:
+
+- [Jupyter Notebook `.ipynb`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/23-spark-text-manipulation/23-spark-text-manipulation.ipynb)
+- [Databricks Notebook `.dbc`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/23-spark-text-manipulation/23-spark-text-manipulation.dbc)
+- [Python Source Code `.py`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/23-spark-text-manipulation/23-spark-text-manipulation.py)

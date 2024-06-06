@@ -230,3 +230,11 @@ print("example_distinct example (unique words):", example__distinct)
 {{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-26-Demo-RDD-API-Part-1.mp4" controls="yes" >}}
 
 You can download the video by right clicking the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-26-Demo-RDD-API-Part-1.mp4)
+
+## Download the code
+
+You can download the Jupyter notebook, Databricks Notebook, or the Python source code using the following links:
+
+- [Jupyter Notebook `.ipynb`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/26-rdd-operations-part-1/rdd_operations_part_1.ipynb)
+- [Databricks Notebook `.dbc`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/26-rdd-operations-part-1/rdd_operations_part_1.dbc)
+- [Python Source Code `.py`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/26-rdd-operations-part-1/rdd_operations_part_1.py)

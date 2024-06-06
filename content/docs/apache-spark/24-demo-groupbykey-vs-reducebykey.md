@@ -55,3 +55,11 @@ print(f"Reduced RDD result: {reduced_result[:10]}")  # Display only the first 10
 {{< video src="https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-24-Demo-GroupByKey-Vs-ReduceByKey.mp4" controls="yes" >}}
 
 You can download the video by right clicking the link and chose save link as: [Download Video](https://dn8min85zvx9p.cloudfront.net/spark-course/Ch.04-24-Demo-GroupByKey-Vs-ReduceByKey.mp4)
+
+## Download the code
+
+You can download the Jupyter notebook, Databricks Notebook, or the Python source code using the following links:
+
+- [Jupyter Notebook `.ipynb`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/24-GroupByKey-Vs-ReduceByKey/24-GroupByKey-Vs-ReduceByKey.ipynb)
+- [Databricks Notebook `.dbc`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/24-GroupByKey-Vs-ReduceByKey/24-GroupByKey-Vs-ReduceByKey.dbc)
+- [Python Source Code `.py`](https://dn8min85zvx9p.cloudfront.net/spark-course/Code/24-GroupByKey-Vs-ReduceByKey/24-GroupByKey-Vs-ReduceByKey.py)
