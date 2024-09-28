@@ -4,6 +4,7 @@ env:
   WC_HUGO_VERSION: '0.126.1'
   AWS_REGION: eu-west-1     
   AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+  DOMAIN_NAME: ${{ env.DOMAIN_NAME }}
 
 on:
   push:
@@ -37,7 +38,7 @@ jobs:
       env:
         HUGO_ENVIRONMENT: production
       run: |
-        hugo --minify --baseURL "https://www.garageeducation.org/"
+        hugo --minify --baseURL "https://${{ env.DOMAIN_NAME }}/"
     - name: Generate Pagefind search index
       run: npx pagefind --source "public"
     - name: Upload artifact
@@ -65,7 +66,7 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
     - name: Deploy to AWS S3
       run: |
-        aws s3 sync public s3://www.garageeducation.org --delete
+        aws s3 sync public s3://${{ env.DOMAIN_NAME }} --delete
         aws cloudfront create-invalidation --distribution-id E1CF7XOS3V85HR  --paths "/*"
         aws cloudfront create-invalidation --distribution-id E14SJE4M9FKDNO --paths "/*"
 
