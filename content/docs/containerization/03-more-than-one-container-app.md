@@ -4,7 +4,7 @@ summary: Traditional, virtualized, and container deployment are the evolution st
 weight: 4
 
 date: 2020-04-21
-lastmod: 2020-21-14
+lastmod: 2020-04-21
 draft: false # Is this a draft? true/false
 type: docs # Do not modify.
 toc: true

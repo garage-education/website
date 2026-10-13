@@ -1,0 +1,23 @@
+# Garage Education profile, shown by the resume-biography block on the home page.
+name:
+  display: Garage Education
+is_owner: true
+bio: >-
+  Garage Education is a nonprofit organization; its vision is to empower science and
+  engineering communities. We aim to bring knowledge, inspiration, and innovation to
+  everyone and teach others to become successful. All our work is open source, and
+  available for free, sharing is permitted, with the mention to the channel as the reference
+links:
+  - icon: hero/at-symbol
+    url: 'mailto:education@gability.com'
+    label: E-mail Me
+  - icon: brands/x
+    url: https://x.com/garageeducation
+  - icon: brands/facebook
+    url: https://facebook.com/Garage-Education-103797294423895
+  - icon: brands/linkedin
+    url: https://pl.linkedin.com/in/garage-education-233a51197
+  - icon: brands/discord
+    url: https://discord.gg/3UHad67Y
+  - icon: brands/github
+    url: https://github.com/garage-education

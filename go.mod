@@ -1,8 +1,5 @@
-module github.com/HugoBlox/theme-documentation
+module github.com/garage-education/website
 
-go 1.15
+go 1.22.2
 
-require (
-	github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify v1.1.2-0.20240217212918-ae7f0c597978
-	github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.2.1-0.20240519161223-50c6efcd67ff
-)
+require github.com/HugoBlox/kit/modules/blox v0.12.1-0.20260527025414-68cbf3353012 // indirect

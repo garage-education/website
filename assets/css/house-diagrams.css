@@ -1,0 +1,121 @@
+/* Diagrams for "Building an Agent Harness with Spring AI".
+   The house documentation style's diagram rules (arch, seq, flow, sketch),
+   scoped to the figures so they never touch the rest of the site. Diagrams sit
+   on a fixed light panel, so the palette reads the same in dark mode.
+   Loaded only on course pages by layouts/_partials/hooks/body-end/house-diagrams.html.
+   Source: GarageEducation/harness/course/hugo; copied by course/tools/sync_to_hugo.py. */
+
+figure.arch, figure.seq, figure.flow, figure.sketch {
+  --ink: #0d2238;
+  --prose: #23394d;
+  --muted: #526577;
+  --teal: #2ec4b6;
+  --teal-deep: #087f79;
+  --link: #0b827c;
+  --orange: #ff7629;
+  --red: #ef2945;
+  --purple: #7b3f98;
+  --cloud: #f3f7f8;
+  --line: #d9e1e7;
+  --line-strong: #9cacb8;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --radius: 10px;
+  margin: 1.5rem 0 2rem;
+  max-width: none;
+}
+figure.arch figcaption, figure.seq figcaption, figure.flow figcaption, figure.sketch figcaption,
+.prose p.caption {
+  margin-top: 0.5rem; font-size: 0.85rem; text-align: center; opacity: 0.85;
+}
+
+/* Architecture */
+.dg-canvas {
+  position: relative; overflow: hidden; width: 100%;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background-color: #fff;
+  background-image: radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.dg-stage { position: absolute; top: 0; left: 0; transform-origin: 0 0; }
+.dg-edges { position: absolute; inset: 0; overflow: visible; pointer-events: none; margin: 0; }
+.dg-node {
+  position: absolute; display: grid; align-content: center; min-height: 56px; padding: 8px 10px;
+  border: 1.5px solid var(--ink); border-radius: 8px; background: #fff;
+  color: var(--ink); font: 13px/1.3 var(--font-body); text-align: center;
+}
+.dg-node__label { font-weight: 650; }
+.dg-node__detail { margin-top: 3px; color: var(--muted); font-size: 11px; }
+.dg-node.platform { border-color: var(--teal-deep); }
+.dg-node.operator { border-color: var(--orange); }
+.dg-node.external { border-color: var(--line-strong); border-style: dashed; }
+.dg-node.data { background: var(--cloud); }
+.dg-node.ai { border-color: var(--purple); }
+.dg-node.muted { border-color: var(--line); color: var(--muted); }
+.dg-node.isolated { border-color: var(--red); border-style: dashed; background: #fff5f6; color: var(--red); }
+.dg-boundary {
+  position: absolute; border: 1.5px dashed var(--line-strong); border-radius: 12px;
+  background: rgba(243, 247, 248, 0.55);
+}
+.dg-boundary__label { padding: 6px 10px; color: var(--muted); font: 10.5px var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; }
+.dg-edge { fill: none; stroke: var(--line-strong); stroke-width: 1.4; }
+.dg-edge.dashed { stroke-dasharray: 6 4; }
+.dg-edge.media { stroke: var(--teal-deep); stroke-width: 3; stroke-linecap: round; }
+.dg-edge.animated { stroke-dasharray: 5; animation: dg-flow 0.5s linear infinite; }
+@keyframes dg-flow { from { stroke-dashoffset: 10; } }
+.dg-edge-label rect { fill: #fff; }
+.dg-edge-label text { fill: var(--muted); font: 11px var(--font-body); }
+.dg-warning { margin-top: 0.4rem; color: #b51d22; font-size: 0.8rem; text-align: center; }
+
+/* Sequence */
+.seq-scroll { overflow-x: auto; padding: 0.25rem; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+figure.seq svg { display: block; max-width: none; margin: 0; font-family: var(--font-body); }
+.seq-lifeline { stroke: var(--line-strong); stroke-dasharray: 4 4; stroke-width: 1; }
+.seq-head { fill: #fff; stroke-width: 1.5; }
+.seq-head-text { fill: var(--ink); font-size: 12px; font-weight: 650; }
+.seq-msg { fill: none; stroke: var(--ink); stroke-width: 1.5; transition: opacity 0.15s ease; }
+.seq-msg.response { stroke-dasharray: 6 4; }
+.seq-msg.media { stroke: var(--teal-deep); stroke-width: 3; stroke-linecap: round; }
+.seq-msg.active { stroke: var(--link); stroke-width: 2.5; }
+.seq-note { fill: var(--cloud); stroke: var(--line); }
+.seq-label { fill: var(--ink); font-size: 10.5px; transition: opacity 0.15s ease; }
+.seq-label.active { fill: var(--link); font-weight: 650; }
+figure.seq .dim { opacity: 0.3; }
+figure.seq .clickable { cursor: pointer; }
+.seq-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 0.75rem; margin-top: 0.5rem; }
+.seq-step { flex: 1 1 14rem; font-size: 0.82rem; text-align: center; opacity: 0.85; }
+.seq-controls button {
+  padding: 0.3rem 0.7rem; border: 1px solid var(--line-strong); border-radius: 6px;
+  background: #fff; color: var(--ink); font: 0.8rem var(--font-body); cursor: pointer;
+}
+.seq-controls button:disabled { cursor: default; opacity: 0.4; }
+
+/* Flow */
+.flow-chain { display: grid; justify-items: center; gap: 0; padding: 1.25rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+.flow-row { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 0.75rem; width: 100%; }
+.flow-step { grid-column: 2; min-width: 14rem; padding: 0.55rem 0.9rem; border: 1.5px solid var(--ink); border-radius: 8px; background: #fff; color: var(--ink); font-size: 0.9rem; font-weight: 650; text-align: center; }
+.flow-step.platform { border-color: var(--teal-deep); color: var(--teal-deep); }
+.flow-exit { grid-column: 3; color: var(--muted); font-size: 0.82rem; }
+.flow-exit::before { margin-right: 0.4rem; color: var(--line-strong); content: '— no →'; }
+.flow-arrow { width: 2px; height: 1.4rem; background: var(--line-strong); position: relative; }
+.flow-arrow::after { position: absolute; bottom: -1px; left: -4px; border: 5px solid transparent; border-top-color: var(--line-strong); content: ''; }
+
+/* Hand-drawn sketches */
+figure.sketch svg { display: block; width: 100%; height: auto; margin: 0; padding: 0.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+.sk-box { fill: #fff; stroke: var(--ink); stroke-width: 1.6; }
+.sk-label { fill: var(--ink); font: 650 13px var(--font-body); }
+.sk-sub { fill: var(--muted); font: 12px var(--font-body); }
+
+/* Unknown facts are impossible to miss. */
+.needs-input {
+  padding: 0.05em 0.4em; border: 1px dashed #d97706; border-radius: 5px;
+  background: #fff7ed; color: #9a4b00; font-weight: 700; font-size: 0.92em;
+}
+
+/* Dark mode: the diagrams keep their light panel; only the borders soften. */
+html.dark .dg-canvas, html.dark .seq-scroll, html.dark .flow-chain, html.dark figure.sketch svg { border-color: #33475b; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dg-edge.animated { animation: none; }
+  .seq-msg, .seq-label { transition: none; }
+}
