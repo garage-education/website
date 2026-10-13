@@ -1,10 +1,16 @@
 # IDEs
 .idea/
+.DS_Store
 
 # Hugo
-resources/
 public/
-jsconfig.json
-#youtube
+resources/
+node_modules/
+hugo_stats.json
+.hugo_build.lock
+assets/jsconfig.json
+assets/js/preact-built/
+.cache/
+
+# YouTube automation
 automation/
-go.sum
