@@ -12,7 +12,7 @@ Put guardrails in code, not in the prompt.
 
 - **Argument checks.** Reject a `minutes` value outside 1 to 1440 before the tool runs. Return the error text to the model.
 - **Allowlist.** Each agent has a fixed set of tool names. Reject any other name.
-- **Loop detection.** Count each tool name plus arguments. Stop when one key repeats three times.
+- **Loop detection.** Chapter 6 built it. The run stops with `LOOP_DETECTED` when one tool name plus arguments repeats three times.
 
 <figure class="flow">
 <script type="application/json">

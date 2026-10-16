@@ -38,3 +38,24 @@ This book teaches Java engineers to build an agent harness with Spring AI. The r
 </script>
 <figcaption>Figure 0.1. The local stack. Everything runs on one machine with fake data. The figure leaves out the embedding and Temporal connections from the app; later chapters draw each one where it is used.</figcaption>
 </figure>
+
+## How to use this course
+
+The code lives in the `garage-education/harness-engineering` repository on GitHub. Clone it before Chapter 2:
+
+```bash
+git clone git@github.com:garage-education/harness-engineering.git
+```
+
+You need JDK 27 and LM Studio. Chapter 2 sets up the rest.
+
+Work through each chapter in four steps:
+
+1. **Read** the chapter. It shows the code for that chapter only.
+2. **Write** the code, or compare it with `src/main/java/com/garageeducation/harness/` in the repository.
+3. **Send** the chapter's requests in `requests/harness.http`. Open the file in IntelliJ IDEA, or in VS Code with the REST Client extension.
+4. **Read** the console log. Each chapter shows the log lines to expect. Chapter 2, Table 2.1 explains every log tag.
+
+The repository's `src/` holds the code after Chapter 6. It is ahead of Chapters 3 to 5. Follow the code in each chapter, not the final files.
+
+Model replies differ between runs. Compare the shape of each reply and log, not the exact words.
