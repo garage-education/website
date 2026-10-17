@@ -335,10 +335,55 @@
     });
   }
 
+  /* Language tabs: one choice switches every group on the page and is remembered across pages. */
+  function initTabs() {
+    var groups = [].slice.call(document.querySelectorAll('.lang-tabs'));
+    if (!groups.length) return;
+    var KEY = 'course-lang';
+    var saved = null;
+    try { saved = window.localStorage.getItem(KEY); } catch (e) { /* storage blocked: use the default */ }
+    var asked = new URLSearchParams(window.location.search).get('lang');
+    function select(lang, anchor) {
+      var top = anchor ? anchor.getBoundingClientRect().top : 0;
+      groups.forEach(function (g) {
+        var panels = [].slice.call(g.querySelectorAll('.lang-panel'));
+        var pick = panels.some(function (p) { return p.dataset.lang === lang; }) ? lang : panels[0].dataset.lang;
+        panels.forEach(function (p) { p.hidden = p.dataset.lang !== pick; });
+        [].forEach.call(g.querySelectorAll('.lang-tab'), function (b) {
+          var on = b.dataset.lang === pick;
+          b.setAttribute('aria-selected', on ? 'true' : 'false');
+          b.tabIndex = on ? 0 : -1;
+        });
+      });
+      // Groups above the clicked one change height. Keep the clicked tab where the reader sees it.
+      if (anchor) window.scrollBy(0, anchor.getBoundingClientRect().top - top);
+    }
+    groups.forEach(function (g) {
+      var tabs = [].slice.call(g.querySelectorAll('.lang-tab'));
+      tabs.forEach(function (b, i) {
+        b.addEventListener('click', function () {
+          select(b.dataset.lang, b);
+          try { window.localStorage.setItem(KEY, b.dataset.lang); } catch (e) { /* not remembered */ }
+        });
+        b.addEventListener('keydown', function (e) {
+          var step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+          if (!step) return;
+          e.preventDefault();
+          var next = tabs[(i + step + tabs.length) % tabs.length];
+          next.focus();
+          next.click();
+        });
+      });
+    });
+    document.documentElement.classList.add('tabs-ready');
+    select((asked || saved || 'java').toLowerCase());
+  }
+
   function init() {
     [].forEach.call(document.querySelectorAll('figure.arch'), renderArch);
     [].forEach.call(document.querySelectorAll('figure.seq'), renderSeq);
     [].forEach.call(document.querySelectorAll('figure.flow'), renderFlow);
+    initTabs();
   }
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(init); else document.addEventListener('DOMContentLoaded', init);
 })();

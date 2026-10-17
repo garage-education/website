@@ -12,7 +12,7 @@ toc: true
 
 ## About "Building an Agent Harness with Spring AI"
 
-This book teaches Java engineers to build an agent harness with Spring AI. The running example is the Log Incident Watcher. Read the chapters in order. Each chapter adds one idea. Run the code in each chapter before you read the next one. All examples use fake data and run offline.
+This book teaches engineers to build an agent harness with Spring AI in Java. Chapters 2 to 6 also show every step in Python with LangChain. The running example is the Log Incident Watcher. Read the chapters in order. Each chapter adds one idea. Run the code in each chapter before you read the next one. All examples use fake data and run offline.
 
 ## What you will build
 

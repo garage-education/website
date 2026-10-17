@@ -40,7 +40,13 @@ This chapter builds a Spring Boot 4.1.1 project that talks to LM Studio.
 
 ## Step 1: The build file
 
-The project uses Gradle with the Kotlin DSL. Figure 2.1 shows its parts.
+Figure 2.1 shows the parts of the project.
+
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t1-java-tab" data-lang="java" aria-controls="t1-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t1-python-tab" data-lang="python" aria-controls="t1-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t1-java" data-lang="java" data-label="Java" aria-labelledby="t1-java-tab">
+
+The project lives in the repository's `java/` folder. It uses Gradle with the Kotlin DSL.
 
 ```kotlin
 plugins {
@@ -108,6 +114,71 @@ In IntelliJ IDEA, accept the prompt to enable annotation processing. Lombok need
 rootProject.name = "harness"
 ```
 
+</div>
+<div class="lang-panel" role="tabpanel" id="t1-python" data-lang="python" data-label="Python" aria-labelledby="t1-python-tab">
+
+The project lives in the repository's `python/` folder. It uses uv, a Python package manager. `pyproject.toml` plays the part of `build.gradle.kts`:
+
+```toml
+[project]
+name = "harness"
+version = "0.0.1"
+description = "The Log Incident Watcher agent harness, in Python with LangChain."
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi==0.142.2",
+    "langchain==1.4.3",
+    "langchain-openai==1.6.7",
+    "pyyaml==6.0.3",
+    "uvicorn==0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy==2.4.0",
+    "ruff==0.16.10",
+    "types-pyyaml==6.0.12.20260906",
+]
+
+[project.scripts]
+harness = "harness.harness_application:main"
+
+[build-system]
+requires = ["uv_build>=0.12,<0.14"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 140
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B"]
+
+[tool.mypy]
+strict = true
+
+[tool.uv]
+# Resolve every package, direct or transitive, to a release at least two weeks old.
+exclude-newer = "2026-10-03T00:00:00Z"
+```
+
+- `langchain` and `langchain-openai` play the part of the Spring AI BOM and the OpenAI starter.
+- `fastapi` and `uvicorn` play the part of the Web MVC starter. Uvicorn serves HTTP on port 8080.
+- `pyyaml` reads `application.yaml`. Spring Boot does this for you.
+- Each version is pinned. `exclude-newer` also pins every package those depend on, so every student gets the same versions.
+- `mypy` and `ruff` check types and style. They play the part of the Java compiler.
+- `requires-python` is 3.14. uv downloads it if it is missing.
+- `[project.scripts]` adds the `harness` command. It starts the app.
+
+Install the packages from the `python/` folder:
+
+```bash
+cd python
+uv sync
+```
+
+</div>
+</div>
+
 ## Step 2: The model settings
 
 LM Studio exposes an OpenAI-compatible API (application programming interface). The OpenAI starter calls it. Figure 2.2 shows how.
@@ -174,13 +245,33 @@ LM Studio exposes an OpenAI-compatible API (application programming interface). 
 <figcaption>Figure 2.2. The chat model family. Teal is what this course uses. Redrawn and cut down from the Spring AI reference, <a href="https://docs.spring.io/spring-ai/reference/api/chatmodel.html">Chat Model API</a>.</figcaption>
 </figure>
 
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t2-java-tab" data-lang="java" aria-controls="t2-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t2-python-tab" data-lang="python" aria-controls="t2-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t2-java" data-lang="java" data-label="Java" aria-labelledby="t2-java-tab">
+
 - **`ChatClient`** is the API your code calls. It holds a `ChatModel`.
 - **`ChatModel`** is one interface. Its `call(Prompt)` method returns a `ChatResponse`. Each provider has one implementation.
 - **The OpenAI starter** creates an `OpenAiChatModel`. It sends HTTP requests in the OpenAI format.
 - **Any server that speaks that format works.** `base-url` points the same class at LM Studio.
 - **To change provider, change the starter.** The code in later chapters stays the same.
 
-Put the settings in `src/main/resources/application.yaml`.
+</div>
+<div class="lang-panel" role="tabpanel" id="t2-python" data-lang="python" data-label="Python" aria-labelledby="t2-python-tab">
+
+- **`BaseChatModel`** plays the part of `ChatModel`. Its `invoke(messages)` method returns an `AIMessage`.
+- **`ChatOpenAI`** plays the part of `OpenAiChatModel`. It comes from `langchain-openai` and sends HTTP requests in the OpenAI format.
+- **Any server that speaks that format works.** `base_url` points `ChatOpenAI` at LM Studio.
+- **To change provider, change the package.** For example, `langchain-anthropic` provides `ChatAnthropic`. The code in later chapters stays the same.
+- **Python has no `ChatClient` layer.** Your code calls the chat model directly.
+
+</div>
+</div>
+
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t3-java-tab" data-lang="java" aria-controls="t3-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t3-python-tab" data-lang="python" aria-controls="t3-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t3-java" data-lang="java" data-label="Java" aria-labelledby="t3-java-tab">
+
+Put the settings in `java/src/main/resources/application.yaml`.
 
 ```yaml
 spring:
@@ -231,6 +322,199 @@ logging:
 | `[loop]` | `AgentLoop.run` | One step or one stop decision of your loop |
 | `[tool]` | `LogTools.countErrors` | The tool ran, with its arguments and result |
 
+
+</div>
+<div class="lang-panel" role="tabpanel" id="t3-python" data-lang="python" data-label="Python" aria-labelledby="t3-python-tab">
+
+Put the settings in `python/application.yaml`. The values match the Java file:
+
+```yaml
+# The same settings as java/src/main/resources/application.yaml.
+server:
+  port: 8080
+
+ai:
+  openai:
+    base-url: http://localhost:1234/v1
+    api-key: lm-studio
+    chat:
+      model: google/gemma-4-12b-qat
+    embedding:
+      model: text-embedding-bge-m3
+  chat:
+    observations:
+      # Log every prompt sent to the model and every reply. Local and fake data only:
+      # in production these logs can contain user data.
+      log-prompt: true
+      log-completion: true
+
+# Python's logging.config.dictConfig format. Uvicorn uses it too.
+logging:
+  version: 1
+  disable_existing_loggers: false
+  formatters:
+    console:
+      # Time, level, logger name, message. The same layout as the Java app.
+      format: "%(asctime)s.%(msecs)03d %(levelname)-5s %(name)-40s %(message)s"
+      datefmt: "%H:%M:%S"
+  handlers:
+    console:
+      class: logging.StreamHandler
+      formatter: console
+  root:
+    level: INFO
+    handlers: [console]
+  loggers:
+    # Our code: one line per decision in Assistant, AgentLoop, and LogTools.
+    harness:
+      level: DEBUG
+    # LangChain runs a tool: "Executing tool call: count_errors" (agent path only).
+    ToolCalling:
+      level: DEBUG
+```
+
+- The `ai` keys match the Spring AI keys. `base-url` ends in `/v1`.
+- `logging` uses Python's `dictConfig` format. Uvicorn uses the same settings, so every line has the same layout.
+- `harness: DEBUG` turns on DEBUG logs for our code. `ToolCalling: DEBUG` shows each tool run from Chapter 4.
+
+Spring Boot reads `application.yaml` for you. In Python, `application_properties.py` reads it once into one typed object:
+
+```python
+"""Reads application.yaml into one typed object."""
+
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any, Final
+
+import yaml
+
+DEFAULT_PATH: Final = Path(__file__).resolve().parents[2] / "application.yaml"
+
+
+@dataclass(frozen=True)
+class ApplicationProperties:
+    """The settings in ``application.yaml``.
+
+    Spring Boot binds ``application.yaml`` for you. Python reads it here, once, at startup.
+
+    Attributes:
+        port: the HTTP port, 8080
+        base_url: the LM Studio URL, ending in ``/v1``
+        api_key: any value; LM Studio ignores it
+        chat_model: the chat model identifier in LM Studio
+        log_prompt: log every prompt sent to the model
+        log_completion: log every reply from the model
+        logging: the ``logging`` section, in ``logging.config.dictConfig`` format
+    """
+
+    port: int
+    base_url: str
+    api_key: str
+    chat_model: str
+    log_prompt: bool
+    log_completion: bool
+    logging: dict[str, Any]
+
+    @classmethod
+    def load(cls, path: Path = DEFAULT_PATH) -> ApplicationProperties:
+        """Reads ``application.yaml``.
+
+        Args:
+            path: the file to read; ``python/application.yaml`` by default
+
+        Returns:
+            the settings
+        """
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        openai = data["ai"]["openai"]
+        observations = data["ai"]["chat"]["observations"]
+        return cls(
+            port=data["server"]["port"],
+            base_url=openai["base-url"],
+            api_key=openai["api-key"],
+            chat_model=openai["chat"]["model"],
+            log_prompt=observations["log-prompt"],
+            log_completion=observations["log-completion"],
+            logging=data["logging"],
+        )
+```
+
+- `@dataclass(frozen=True)` makes an object whose fields never change, like a Java record.
+- `load` is a class method, like a static factory method in Java.
+
+Spring AI logs each prompt and reply when `log-prompt` and `log-completion` are on. LangChain has no such switch. `observation_logging.py` adds the same log lines through LangChain callbacks:
+
+```python
+"""Logs each prompt, each reply, and each tool run, like Spring AI's observation logs."""
+
+import logging
+from typing import Any, Final
+from uuid import UUID
+
+from langchain_core.callbacks import BaseCallbackHandler
+from langchain_core.messages import BaseMessage
+from langchain_core.outputs import LLMResult
+
+prompt_log: Final = logging.getLogger("ChatModelPromptContent")
+completion_log: Final = logging.getLogger("ChatModelCompletion")
+tool_log: Final = logging.getLogger("ToolCalling")
+
+
+class ChatModelObservationHandler(BaseCallbackHandler):
+    """Logs the messages sent to the model and the text it returns.
+
+    Spring AI writes these lines when ``log-prompt`` and ``log-completion`` are on.
+    LangChain has no such switch, so this handler writes the same two lines.
+    """
+
+    def __init__(self, log_prompt: bool, log_completion: bool) -> None:
+        self.log_prompt = log_prompt
+        self.log_completion = log_completion
+
+    def on_chat_model_start(self, serialized: dict[str, Any], messages: list[list[BaseMessage]], *, run_id: UUID, **kwargs: Any) -> None:
+        """Logs the text of every message in the prompt."""
+        if self.log_prompt:
+            prompt_log.info("Chat Model Prompt Content:\n%s", [message.text for message in messages[0]])
+
+    def on_llm_end(self, response: LLMResult, *, run_id: UUID, **kwargs: Any) -> None:
+        """Logs the reply text. ``[]`` means a tool call with no text."""
+        if self.log_completion:
+            texts = [generation.text for generation in response.generations[0] if generation.text]
+            completion_log.info("Chat Model Completion:\n%s", texts)
+
+
+class ToolExecutionHandler(BaseCallbackHandler):
+    """Logs each tool run that LangChain starts for you.
+
+    Spring AI's ``DefaultToolCallingManager`` writes the same line at DEBUG.
+    """
+
+    def on_tool_start(self, serialized: dict[str, Any], input_str: str, *, run_id: UUID, **kwargs: Any) -> None:
+        """Logs the name of the tool about to run."""
+        tool_log.debug("Executing tool call: %s", serialized.get("name"))
+```
+
+- `on_chat_model_start` runs before each model call. `on_llm_end` runs after it.
+- `ToolExecutionHandler` logs each tool run that LangChain starts. Chapter 4 uses it.
+- Chapter 3 attaches `ChatModelObservationHandler` to the chat model.
+
+Table 2.1 lists what each log line means.
+
+| Log line starts with | Written by | Means |
+|---|---|---|
+| `Chat Model Prompt Content` | `ChatModelObservationHandler` | The messages sent to the model, as text |
+| `HTTP Request: POST …/chat/completions` | `httpx2`, inside the OpenAI SDK | One model call |
+| `Chat Model Completion` | `ChatModelObservationHandler` | The model's reply text. `[]` means a tool call with no text. |
+| `Executing tool call` | `ToolExecutionHandler` | LangChain ran a tool for you |
+| `[auto]` | `Assistant.ask_auto_tool_call` | The Chapter 4 path: LangChain runs the tools |
+| `[halt]` | `Assistant.ask_halt_tool_call` | The Chapter 5 path: no tool runs |
+| `[loop]` | `AgentLoop.run` | One step or one stop decision of your loop |
+| `[tool]` | `LogTools.count_errors` | The tool ran, with its arguments and result |
+| `"GET /… HTTP/1.1" 200` | `uvicorn.access` | One HTTP request ends, with its status code |
+
+</div>
+</div>
+
 <p class="caption">Table 2.1. How to read the console log. Each chapter shows the lines its run prints.</p>
 
 List the identifiers with this request:
@@ -240,6 +524,10 @@ curl http://localhost:1234/v1/models
 ```
 
 ## Step 3: The main class
+
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t4-java-tab" data-lang="java" aria-controls="t4-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t4-python-tab" data-lang="python" aria-controls="t4-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t4-java" data-lang="java" data-label="Java" aria-labelledby="t4-java-tab">
 
 ```java
 package com.garageeducation.harness;
@@ -271,13 +559,69 @@ public class HarnessApplication {
 }
 ```
 
-Start the app:
+Start the app from the `java/` folder:
 
 ```bash
+cd java
 ./gradlew bootRun
 ```
 
 On Windows, run `gradlew.bat bootRun`.
+
+</div>
+<div class="lang-panel" role="tabpanel" id="t4-python" data-lang="python" data-label="Python" aria-labelledby="t4-python-tab">
+
+Create `python/src/harness/harness_application.py`:
+
+```python
+"""Starts the harness."""
+
+import uvicorn
+from fastapi import FastAPI
+
+from harness.application_properties import ApplicationProperties
+
+
+def create_app() -> FastAPI:
+    """Creates every object and wires them together.
+
+    It plays the part of Spring's application context: one place builds each object once
+    and passes it to the constructors that need it. Chapter 3 adds the first objects.
+
+    Returns:
+        the web app
+    """
+    return FastAPI(title="harness")
+
+
+def main() -> None:
+    """Runs the app on port 8080.
+
+    ``reload=True`` restarts the app when a source file changes, like Spring Boot DevTools.
+    """
+    properties = ApplicationProperties.load()
+    uvicorn.run(
+        "harness.harness_application:create_app",
+        factory=True,
+        port=properties.port,
+        reload=True,
+        log_config=properties.logging,
+    )
+```
+
+- `create_app()` builds every object. It plays the part of Spring's application context. Chapter 3 adds the first objects.
+- `main()` plays the part of the Java `main` method. `uvicorn.run` starts the web server on port 8080.
+- `reload=True` restarts the app when a source file changes, like DevTools.
+
+Start the app from the `python/` folder:
+
+```bash
+cd python
+uv run harness
+```
+
+</div>
+</div>
 
 ## Step 4: The pre-flight check
 

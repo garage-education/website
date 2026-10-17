@@ -10,7 +10,7 @@ toc: true
 
 Oct 10, 2026 · @Ahmed Hassanien
 
-This book teaches Java engineers to build an agent harness with Spring AI. The running example is the Log Incident Watcher. Read the chapters in order. Each chapter adds one idea. Run the code in each chapter before you read the next one. All examples use fake data and run offline.
+This book teaches engineers to build an agent harness with Spring AI in Java. Chapters 2 to 6 also show every step in Python with LangChain. The running example is the Log Incident Watcher. Read the chapters in order. Each chapter adds one idea. Run the code in each chapter before you read the next one. All examples use fake data and run offline.
 
 **Versions:** Spring Boot 4.1.1, Spring AI 2.0.1, Spring AI Session 0.6.0, Temporal 1.35.0. Use released versions only.
 
@@ -47,15 +47,17 @@ The code lives in the `garage-education/harness-engineering` repository on GitHu
 git clone git@github.com:garage-education/harness-engineering.git
 ```
 
-You need JDK 27 and LM Studio. Chapter 2 sets up the rest.
+Pick a language: Java with Spring AI, or Python with LangChain. From Chapter 2 to Chapter 6, every code sample has a **Java** tab and a **Python** tab. Your choice applies to every page and is remembered.
+
+You need LM Studio, plus JDK 27 for Java or uv for Python. Chapter 2 sets up the rest.
 
 Work through each chapter in four steps:
 
 1. **Read** the chapter. It shows the code for that chapter only.
-2. **Write** the code, or compare it with `src/main/java/com/garageeducation/harness/` in the repository.
+2. **Write** the code, or compare it with `java/src/main/java/com/garageeducation/harness/` or `python/src/harness/` in the repository.
 3. **Send** the chapter's requests in `requests/harness.http`. Open the file in IntelliJ IDEA, or in VS Code with the REST Client extension.
 4. **Read** the console log. Each chapter shows the log lines to expect. Chapter 2, Table 2.1 explains every log tag.
 
-The repository's `src/` holds the code after Chapter 6. It is ahead of Chapters 3 to 5. Follow the code in each chapter, not the final files.
+The repository's `java/` and `python/` folders hold the code after Chapter 6. Both apps listen on port 8080 and answer the same requests. Run one at a time. It is ahead of Chapters 3 to 5. Follow the code in each chapter, not the final files.
 
 Model replies differ between runs. Compare the shape of each reply and log, not the exact words.

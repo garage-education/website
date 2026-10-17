@@ -119,3 +119,19 @@ html.dark .dg-canvas, html.dark .seq-scroll, html.dark .flow-chain, html.dark fi
   .dg-edge.animated { animation: none; }
   .seq-msg, .seq-label { transition: none; }
 }
+
+/* Language tabs (Java, Python). Colours follow the theme text, so they work in light and dark mode.
+   Without JavaScript, every panel shows under its label. */
+.lang-tabs { margin: 1.2rem 0 1.6rem; }
+.lang-tabs__bar { display: none; }
+.lang-panel::before { display: block; margin: 1rem 0 0.4rem; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; content: attr(data-label); }
+.tabs-ready .lang-tabs__bar { display: flex; gap: 0.25rem; margin-bottom: 0.9rem; border-bottom: 1px solid rgba(127, 127, 127, 0.35); }
+.tabs-ready .lang-panel::before { content: none; }
+.tabs-ready .lang-panel[hidden] { display: none; }
+.lang-tab {
+  margin-bottom: -1px; padding: 0.45rem 0.95rem; border: 0; border-bottom: 2px solid transparent;
+  background: none; color: inherit; font-size: 0.88rem; font-weight: 600; opacity: 0.65; cursor: pointer;
+}
+.lang-tab:hover { opacity: 1; }
+.lang-tab[aria-selected="true"] { border-bottom-color: #2ec4b6; opacity: 1; }
+.lang-tab:focus-visible { outline: 2px solid #ff7629; outline-offset: 2px; border-radius: 4px; }

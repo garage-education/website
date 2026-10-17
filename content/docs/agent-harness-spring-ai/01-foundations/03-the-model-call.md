@@ -19,7 +19,13 @@ This chapter sends one question to Gemma and returns its text reply.
 
 ## Step 1: The chat client
 
-The OpenAI starter provides a `ChatClient.Builder`, already pointed at LM Studio. Build one client and share it. Create `AiConfig.java`:
+Build one chat client and share it.
+
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t1-java-tab" data-lang="java" aria-controls="t1-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t1-python-tab" data-lang="python" aria-controls="t1-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t1-java" data-lang="java" data-label="Java" aria-labelledby="t1-java-tab">
+
+The OpenAI starter provides a `ChatClient.Builder`, already pointed at LM Studio. Create `AiConfig.java`:
 
 ```java
 package com.garageeducation.harness;
@@ -54,7 +60,61 @@ public class AiConfig {
 - `@Bean` registers the returned `ChatClient`. Spring calls this method once at startup.
 - Any class that asks for a `ChatClient` now receives this one.
 
+</div>
+<div class="lang-panel" role="tabpanel" id="t1-python" data-lang="python" data-label="Python" aria-labelledby="t1-python-tab">
+
+`ChatOpenAI` speaks the OpenAI API, so it can point at LM Studio. Create `ai_config.py`:
+
+```python
+"""Creates the objects that talk to the model."""
+
+from langchain_core.language_models import BaseChatModel
+from langchain_openai import ChatOpenAI
+from pydantic import SecretStr
+
+from harness.application_properties import ApplicationProperties
+from harness.observation_logging import ChatModelObservationHandler
+
+
+class AiConfig:
+    """Creates the objects that talk to the model.
+
+    It plays the part of the Spring ``@Configuration`` class.
+    """
+
+    def __init__(self, properties: ApplicationProperties) -> None:
+        self.properties = properties
+
+    def chat_model(self) -> BaseChatModel:
+        """Builds one chat model for the whole app.
+
+        ``ChatOpenAI`` speaks the OpenAI API, so ``base_url`` points it at LM Studio.
+        Every class that needs the model receives this object.
+
+        Returns:
+            the shared chat model
+        """
+        return ChatOpenAI(
+            base_url=self.properties.base_url,
+            api_key=SecretStr(self.properties.api_key),
+            model=self.properties.chat_model,
+            callbacks=[ChatModelObservationHandler(self.properties.log_prompt, self.properties.log_completion)],
+        )
+```
+
+- `AiConfig` plays the part of a Spring `@Configuration` class. `chat_model()` plays the part of the `@Bean` method.
+- `base_url`, `api_key`, and `model` come from `application.yaml`, through the `ApplicationProperties` from Chapter 2.
+- `callbacks` attaches the Chapter 2 logging handler. It prints each prompt and reply.
+- `create_app()` calls `chat_model()` once and passes the same object to every class that needs it. Step 3 shows it.
+
+</div>
+</div>
+
 ## Step 2: The Assistant
+
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t2-java-tab" data-lang="java" aria-controls="t2-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t2-python-tab" data-lang="python" aria-controls="t2-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t2-java" data-lang="java" data-label="Java" aria-labelledby="t2-java-tab">
 
 ```java
 package com.garageeducation.harness;
@@ -107,7 +167,64 @@ public class Assistant {
 - Your code never builds the HTTP request. Figure 3.1 shows the call. Step 4 shows what happens inside it.
 - The name `askAutoToolCall` looks ahead. Chapter 4 adds tools, and `ChatClient` runs them for you.
 
+</div>
+<div class="lang-panel" role="tabpanel" id="t2-python" data-lang="python" data-label="Python" aria-labelledby="t2-python-tab">
+
+Create `assistant.py`:
+
+```python
+"""Sends one question to the chat model and returns its text reply."""
+
+import logging
+from typing import Final
+
+from langchain_core.language_models import BaseChatModel
+from langchain_core.messages import HumanMessage, SystemMessage
+
+log: Final = logging.getLogger(__name__)
+
+
+class Assistant:
+    """Sends one question to the chat model and returns its text reply."""
+
+    SYSTEM: Final = "You are a careful assistant. Answer in two sentences or fewer."
+
+    def __init__(self, chat: BaseChatModel) -> None:
+        self.chat = chat
+
+    def ask_auto_tool_call(self, question: str) -> str:
+        """Asks the model one question.
+
+        The system message limits the reply to two sentences.
+
+        Args:
+            question: the user's question, in plain text
+
+        Returns:
+            the model's final text reply
+        """
+        log.debug("[auto] LangChain runs every tool call. Question: %s", question)
+        answer = self.chat.invoke([SystemMessage(self.SYSTEM), HumanMessage(question)]).text
+        log.debug("[auto] Final answer: %s", answer)
+        return answer
+```
+
+- The constructor receives the chat model. `create_app()` passes it in, like Spring's constructor injection.
+- `log` is one logger per module. Each `log.debug` line shows in the console.
+- `SYSTEM` is a class constant. `Final` tells the type checker it never changes, like `static final`.
+- `SystemMessage` sets the rules. `HumanMessage` carries the question.
+- `.invoke(…)` sends the request and returns the reply as an `AIMessage`. `.text` returns its text.
+- Your code never builds the HTTP request. Figure 3.1 shows the call. Step 4 shows what happens inside it.
+- The name `ask_auto_tool_call` looks ahead. Chapter 4 adds tools, and a LangChain agent runs them for you.
+
+</div>
+</div>
+
 ## Step 3: The controller
+
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t3-java-tab" data-lang="java" aria-controls="t3-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t3-python-tab" data-lang="python" aria-controls="t3-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t3-java" data-lang="java" data-label="Java" aria-labelledby="t3-java-tab">
 
 ```java
 package com.garageeducation.harness;
@@ -145,6 +262,76 @@ public class TestController {
 - `@RestController` turns each method's return value into the HTTP response.
 - `@GetMapping("/askAutoToolCall")` maps `GET /askAutoToolCall` to the method.
 - `@RequestParam` reads `input` from the query string.
+
+</div>
+<div class="lang-panel" role="tabpanel" id="t3-python" data-lang="python" data-label="Python" aria-labelledby="t3-python-tab">
+
+Create `test_controller.py`:
+
+```python
+"""Exposes Assistant over HTTP for manual tests."""
+
+from fastapi import APIRouter
+from fastapi.responses import PlainTextResponse
+
+from harness.assistant import Assistant
+
+
+class TestController:
+    """Exposes ``Assistant`` over HTTP for manual tests.
+
+    It plays the part of the Spring ``@RestController``. Each ``add_api_route`` line plays
+    the part of one ``@GetMapping``.
+
+    Example: ``GET http://localhost:8080/askAutoToolCall?input=how many error events?``
+    """
+
+    def __init__(self, assistant: Assistant) -> None:
+        self.assistant = assistant
+        self.router = APIRouter()
+        self.router.add_api_route("/askAutoToolCall", self.ask_auto_tool_call, response_class=PlainTextResponse)
+
+    def ask_auto_tool_call(self, input: str) -> str:
+        """Sends the ``input`` query parameter to the model.
+
+        Args:
+            input: the question; the request fails without it
+
+        Returns:
+            the model's text reply
+        """
+        return self.assistant.ask_auto_tool_call(input)
+```
+
+- `add_api_route` maps `GET /askAutoToolCall` to the method, like `@GetMapping`.
+- FastAPI reads `input` from the query string because it is a plain parameter, like `@RequestParam`.
+- `PlainTextResponse` returns the text as is, like a Spring `String` return value.
+
+Wire the objects in `harness_application.py`. Replace `create_app()` from Chapter 2:
+
+```python
+def create_app() -> FastAPI:
+    """Creates every object and wires them together.
+
+    It plays the part of Spring's application context: one place builds each object once
+    and passes it to the constructors that need it.
+
+    Returns:
+        the web app, with the ``TestController`` routes
+    """
+    properties = ApplicationProperties.load()
+    chat = AiConfig(properties).chat_model()
+    controller = TestController(Assistant(chat))
+    app = FastAPI(title="harness")
+    app.include_router(controller.router)
+    return app
+```
+
+- Spring finds and builds each bean for you. In Python, `create_app()` builds each object in order and passes it on.
+- Add the imports for `AiConfig`, `Assistant`, and `TestController` at the top of the file.
+
+</div>
+</div>
 
 <figure class="seq">
 <script type="application/json">
@@ -314,13 +501,31 @@ The numbers in Figure 3.3 match these steps:
 2. **Convert the request.** `OpenAiChatModel` turns the `Prompt` into an OpenAI JSON request. LM Studio runs Gemma on it.
 3. **Convert the reply.** `OpenAiChatModel` turns the JSON reply into a `ChatResponse`. It holds the reply message and metadata, such as token counts.
 
-`.content()` is one of three ways to read the reply. Table 3.1 lists them.
+There are three ways to read the reply. Table 3.1 lists them.
+
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t4-java-tab" data-lang="java" aria-controls="t4-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t4-python-tab" data-lang="python" aria-controls="t4-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t4-java" data-lang="java" data-label="Java" aria-labelledby="t4-java-tab">
 
 | Method | Returns | Used in |
 |---|---|---|
 | `.content()` | The reply text, as a `String` | Chapters 3 and 4 |
 | `.chatResponse()` | The full `ChatResponse`: reply message, tool calls, and token counts | Chapters 5 and 6 |
 | `.entity(Type.class)` | The reply parsed into a Java object | Not used yet |
+
+</div>
+<div class="lang-panel" role="tabpanel" id="t4-python" data-lang="python" data-label="Python" aria-labelledby="t4-python-tab">
+
+| Call | Returns | Used in |
+|---|---|---|
+| `.invoke(messages).text` | The reply text, as a `str` | Chapters 3 and 4 |
+| `.invoke(messages)` | The full `AIMessage`: text, `tool_calls`, and `usage_metadata` (token counts) | Chapters 5 and 6 |
+| `.with_structured_output(Type).invoke(messages)` | The reply parsed into a Python object | Not used yet |
+
+In Python, `.invoke(…)` sends the request. There is no separate `.call()` step.
+
+</div>
+</div>
 
 <p class="caption">Table 3.1. Three ways to read one reply. Each one sends the request.</p>
 
@@ -342,8 +547,12 @@ Please provide the logs or data you are referring to. Once you share them, I can
 
 The console log shows the same run:
 
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t5-java-tab" data-lang="java" aria-controls="t5-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t5-python-tab" data-lang="python" aria-controls="t5-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t5-java" data-lang="java" data-label="Java" aria-labelledby="t5-java-tab">
+
 ```text
-patcherServlet                        GET "/askAutoToolCall?input=how+many+error+events%3F", parameters={masked}
+00:15:18.392 DEBUG DispatcherServlet                        GET "/askAutoToolCall?input=how+many+error+events%3F", parameters={masked}
 00:15:18.393 DEBUG Assistant                                [auto] Spring AI runs every tool call. Question: how many error events?
 00:15:20.872 INFO  ChatModelCompletionObservationHandler    Chat Model Completion:
 ["Please provide the data or context you are referring to. I do not see any events listed in your message."]
@@ -356,7 +565,29 @@ patcherServlet                        GET "/askAutoToolCall?input=how+many+error
 - The prompt holds two messages: the system rules and your question. Figure 3.2 shows both.
 - No `Executing tool call` line appears. The model has no tools yet.
 
-A request without `input` fails. The model is never called.
+</div>
+<div class="lang-panel" role="tabpanel" id="t5-python" data-lang="python" data-label="Python" aria-labelledby="t5-python-tab">
+
+```text
+16:07:14.640 DEBUG harness.assistant                        [auto] LangChain runs every tool call. Question: how many error events?
+16:07:14.644 INFO  ChatModelPromptContent                   Chat Model Prompt Content:
+['You are a careful assistant. Answer in two sentences or fewer.', 'how many error events?']
+16:07:19.309 INFO  httpx2                                   HTTP Request: POST http://localhost:1234/v1/chat/completions "HTTP/1.1 200 OK"
+16:07:19.315 INFO  ChatModelCompletion                      Chat Model Completion:
+['Please provide the log or data you are referring to so I can count the events for you. I do not have any context yet to identify specific errors.']
+16:07:19.315 DEBUG harness.assistant                        [auto] Final answer: Please provide the log or data you are referring to so I can count the events for you. I do not have any context yet to identify specific errors.
+16:07:19.316 INFO  uvicorn.access                           127.0.0.1:55581 - "GET /askAutoToolCall?input=how%20many%20error%20events%3F HTTP/1.1" 200
+```
+
+- The prompt holds two messages: the system rules and your question. Figure 3.2 shows both.
+- `httpx2` writes one line per model call. It is the HTTP client inside the OpenAI SDK.
+- `uvicorn.access` writes one line when the request ends, with its status code.
+- No `Executing tool call` line appears. The model has no tools yet.
+
+</div>
+</div>
+
+A request without `input` fails: Spring returns 400 and FastAPI returns 422. The model is never called.
 
 Or run the Chapter 3 request in `requests/harness.http`.
 

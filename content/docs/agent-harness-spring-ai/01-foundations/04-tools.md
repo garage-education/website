@@ -20,6 +20,10 @@ A tool is a Java method. The model chooses tools from their names and descriptio
 
 ## Step 1: The tool
 
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t1-java-tab" data-lang="java" aria-controls="t1-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t1-python-tab" data-lang="python" aria-controls="t1-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t1-java" data-lang="java" data-label="Java" aria-labelledby="t1-java-tab">
+
 ```java
 package com.garageeducation.harness;
 
@@ -62,6 +66,118 @@ public class LogTools {
 - `@ToolParam` describes each argument. The model fills them in.
 - `@Component` makes `LogTools` a bean, so Spring can pass it to other classes.
 
+</div>
+<div class="lang-panel" role="tabpanel" id="t1-python" data-lang="python" data-label="Python" aria-labelledby="t1-python-tab">
+
+LangChain's `@tool` works on plain functions, not on methods. Two small helpers make a method a tool, like Spring AI's `@Tool`. Create `tool_support.py`:
+
+```python
+"""Marks methods as tools and wraps them, like Spring AI's ``@Tool`` and ``ToolCallbacks.from``."""
+
+import inspect
+from collections.abc import Callable
+from typing import Any, Final, TypeVar
+
+from langchain_core.tools import BaseTool, StructuredTool
+
+F = TypeVar("F", bound=Callable[..., Any])
+
+DESCRIPTION: Final = "_tool_description"
+
+
+def tool(description: str) -> Callable[[F], F]:
+    """Marks a method as a tool the model can call.
+
+    It plays the part of Spring AI's ``@Tool(description = ...)``.
+
+    Args:
+        description: what the tool does and when to use it; the model reads it
+
+    Returns:
+        the same method, marked
+    """
+
+    def mark(method: F) -> F:
+        setattr(method, DESCRIPTION, description)
+        return method
+
+    return mark
+
+
+def tools_from(target: object) -> list[BaseTool]:
+    """Wraps each ``@tool`` method of ``target`` in a LangChain tool.
+
+    It plays the part of Spring AI's ``ToolCallbacks.from(target)``.
+
+    Args:
+        target: an object with ``@tool`` methods
+
+    Returns:
+        one tool per marked method, named after the method
+    """
+    return [
+        StructuredTool.from_function(method, description=getattr(method, DESCRIPTION))
+        for _, method in inspect.getmembers(target, inspect.ismethod)
+        if hasattr(method, DESCRIPTION)
+    ]
+```
+
+- `@tool(description=…)` marks a method, like `@Tool(description = …)`.
+- `tools_from(target)` wraps each marked method in a LangChain tool, like `ToolCallbacks.from(target)`.
+- `StructuredTool.from_function` reads the method's parameters and types. It builds the schema the model sees.
+
+Create `log_tools.py`:
+
+```python
+"""Log tools the model can call."""
+
+import logging
+from typing import Annotated, Final
+
+from pydantic import Field
+
+from harness.tool_support import tool
+
+log: Final = logging.getLogger(__name__)
+
+
+class LogTools:
+    """Log tools the model can call.
+
+    The model sees only the tool name, the ``@tool`` description, and each parameter
+    description. It never sees the method body.
+    """
+
+    @tool(description="Count error log events for one service in the last N minutes. Use this to check for a current error spike.")
+    def count_errors(
+        self,
+        service: Annotated[str, Field(description="Service name, for example checkout")],
+        minutes: Annotated[int, Field(description="Look-back window in minutes, from 1 to 1440")],
+    ) -> int:
+        """Counts error log events for one service.
+
+        The data is fake. The ``checkout`` service returns 412. Every other service returns 3.
+
+        Args:
+            service: the service name, for example ``checkout``
+            minutes: the look-back window in minutes, from 1 to 1440; the fake data ignores it
+
+        Returns:
+            the number of error events
+        """
+        count = 412 if service == "checkout" else 3  # fake data
+        log.debug("[tool] count_errors(service=%s, minutes=%s) returned %s", service, minutes, count)
+        return count
+```
+
+- `@tool` names the method as a tool. Its description tells the model when to use it.
+- `Annotated[str, Field(description=…)]` describes each argument, like `@ToolParam`. The model fills them in.
+- `create_app()` creates one `LogTools` and passes it to other classes, like a Spring bean.
+- The tool name is the method name: `count_errors`.
+
+</div>
+</div>
+
 Figure 4.1 shows what the model sees.
 
 <figure class="sketch">
@@ -92,6 +208,10 @@ Figure 4.1 shows what the model sees.
 </figure>
 
 ## Step 2: Attach the tool
+
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t2-java-tab" data-lang="java" aria-controls="t2-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t2-python-tab" data-lang="python" aria-controls="t2-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t2-java" data-lang="java" data-label="Java" aria-labelledby="t2-java-tab">
 
 Make two changes to the `Assistant` from Chapter 3:
 
@@ -133,6 +253,91 @@ public class Assistant {
 ```
 
 `ChatClient` runs the tool for you. It does so through an advisor. Step 3 explains advisors. Step 4 shows the tool loop.
+
+</div>
+<div class="lang-panel" role="tabpanel" id="t2-python" data-lang="python" data-label="Python" aria-labelledby="t2-python-tab">
+
+Replace `assistant.py`. The assistant now builds an agent that runs the tools:
+
+```python
+"""Sends one question to the chat model, with the tools in LogTools."""
+
+import logging
+from typing import Final
+
+from langchain.agents import create_agent
+from langchain_core.language_models import BaseChatModel
+from langchain_core.messages import HumanMessage
+
+from harness.log_tools import LogTools
+from harness.observation_logging import ToolExecutionHandler
+from harness.tool_support import tools_from
+
+log: Final = logging.getLogger(__name__)
+
+
+class Assistant:
+    """Sends one question to the chat model, with the tools in ``LogTools``."""
+
+    SYSTEM: Final = "You are a careful assistant. Answer in two sentences or fewer."
+
+    def __init__(self, chat: BaseChatModel, log_tools: LogTools) -> None:
+        self.chat = chat
+        self.log_tools = log_tools
+        self.agent = create_agent(chat, tools=tools_from(log_tools), system_prompt=self.SYSTEM).with_config(
+            callbacks=[ToolExecutionHandler()]
+        )
+
+    def ask_auto_tool_call(self, question: str) -> str:
+        """Asks the model one question and lets the agent run the tools.
+
+        ``create_agent`` builds a loop. It runs each tool call, sends the result back to the
+        model, and repeats until the reply has no tool calls.
+
+        Args:
+            question: the user's question, in plain text
+
+        Returns:
+            the model's final text reply
+        """
+        log.debug("[auto] LangChain runs every tool call. Question: %s", question)
+        state = self.agent.invoke({"messages": [HumanMessage(question)]})
+        answer: str = state["messages"][-1].text
+        log.debug("[auto] Final answer: %s", answer)
+        return answer
+```
+
+- The constructor receives `LogTools` too. `create_app()` passes it in.
+- `create_agent` builds a loop around the chat model and the tools. It runs each tool call for you.
+- The constructor builds the agent once. Each question reuses it.
+- `with_config(callbacks=[ToolExecutionHandler()])` logs each tool run, like Spring AI's `Executing tool call` line.
+- `invoke` returns the agent's state. Its last message is the final answer.
+
+Create `LogTools` in `create_app()` and pass it to the `Assistant`:
+
+```python
+def create_app() -> FastAPI:
+    """Creates every object and wires them together.
+
+    It plays the part of Spring's application context: one place builds each object once
+    and passes it to the constructors that need it.
+
+    Returns:
+        the web app, with the ``TestController`` routes
+    """
+    properties = ApplicationProperties.load()
+    chat = AiConfig(properties).chat_model()
+    log_tools = LogTools()
+    controller = TestController(Assistant(chat, log_tools))
+    app = FastAPI(title="harness")
+    app.include_router(controller.router)
+    return app
+```
+
+The agent runs the tool for you. It does so with middleware, LangChain's version of advisors. Step 3 explains advisors. Step 4 shows the tool loop.
+
+</div>
+</div>
 
 ## Step 3: Advisors
 
@@ -229,6 +434,10 @@ The numbers in Figure 4.2 match these steps:
 5. **Advise the reply.** Each advisor reads or changes the reply, in reverse order.
 6. **Return.** `.content()` takes the text from the reply.
 
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t3-java-tab" data-lang="java" aria-controls="t3-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t3-python-tab" data-lang="python" aria-controls="t3-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t3-java" data-lang="java" data-label="Java" aria-labelledby="t3-java-tab">
+
 Each advisor implements one method. This is the interface in Spring AI 2.0.1:
 
 ```java
@@ -263,6 +472,45 @@ Add an advisor in one of two places:
 The model call code stays the same. Memory, retrieval, and safety each plug into the same chain.
 
 `ChatClient` adds `ToolCallingAdvisor` for you. Its order is `HIGHEST_PRECEDENCE + 300`, near the front of the chain. `MessageChatMemoryAdvisor` defaults to `HIGHEST_PRECEDENCE + 200`, so it runs before the tool loop starts. It saves the question and the final answer, not the tool steps. Step 4 shows why the order matters.
+
+</div>
+<div class="lang-panel" role="tabpanel" id="t3-python" data-lang="python" data-label="Python" aria-labelledby="t3-python-tab">
+
+LangChain calls advisors middleware. A middleware class overrides the hooks it needs. These are the main hooks of `AgentMiddleware` in LangChain 1.4 (signatures shortened):
+
+```python
+class AgentMiddleware:
+    def wrap_model_call(self, request: ModelRequest, handler: Callable[[ModelRequest], ModelResponse]) -> ModelResponse: ...
+    def before_model(self, state: AgentState, runtime: Runtime) -> dict[str, Any] | None: ...
+    def after_model(self, state: AgentState, runtime: Runtime) -> dict[str, Any] | None: ...
+    def wrap_tool_call(self, request: ToolCallRequest, handler: Callable[[ToolCallRequest], ToolMessage]) -> ToolMessage: ...
+```
+
+- **`wrap_model_call`** plays the part of `adviseCall`. Code before `handler(request)` runs on the way in. Code after it runs on the way out.
+- **A middleware that never calls `handler`** skips the model. It must return the reply itself.
+- **`before_model` and `after_model`** are shorter hooks for one side only.
+- **`wrap_tool_call`** wraps each tool run.
+- **The order of the `middleware` list** sets the position. The first middleware sees the request first and the reply last.
+
+LangChain ships each common job as one middleware. Table 4.1 lists the closest match for each Spring AI advisor.
+
+| Spring AI advisor | LangChain 1.4 | Course topic |
+|---|---|---|
+| `ToolCallingAdvisor` | Built into `create_agent`: a model node and a tools node | Chapter 4. Chapter 5 uses `bind_tools` without an agent. |
+| `MessageChatMemoryAdvisor` | A `checkpointer` on `create_agent`; `SummarizationMiddleware` to shorten it | Memory, Chapter 10 |
+| `QuestionAnswerAdvisor`, `RetrievalAugmentationAdvisor` | No built-in middleware. A retrieval tool or a `before_model` middleware | Retrieval, Chapter 12 |
+| `SafeGuardAdvisor` | `PIIMiddleware` blocks or masks personal data | Guardrails, Chapter 7 |
+| `StructuredOutputValidationAdvisor` | `response_format` on `create_agent` | |
+| `SimpleLoggerAdvisor` | No built-in middleware. A callback handler, like `observation_logging.py` | Observability, Part 5 |
+
+<p class="caption">Table 4.1. Built-in advisors in Spring AI 2.0.1, and the closest LangChain 1.4 match. Each one adds a job without changing your model call.</p>
+
+Add middleware in one place: `create_agent(…, middleware=[…])`. The model call code stays the same.
+
+`create_agent` runs the tool loop as a graph, not as a middleware. Every `wrap_model_call` middleware wraps each model call inside the loop. To run code once per question, use `before_agent` or `after_agent`.
+
+</div>
+</div>
 
 ## Step 4: The tool calling loop
 
@@ -376,11 +624,27 @@ The numbers in Figure 4.3 match these steps:
    3. The advisor sends the longer history back to the model, at step 1.
 4. **Return.** A reply with no tool call ends the loop. `.content()` returns its text to `Assistant`.
 
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t4-java-tab" data-lang="java" aria-controls="t4-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t4-python-tab" data-lang="python" aria-controls="t4-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t4-java" data-lang="java" data-label="Java" aria-labelledby="t4-java-tab">
+
 - **Your code calls `.call()` once.** The loop runs inside it. One question about `checkout` costs two model calls.
 - **The model never runs code.** It asks. `ToolCallingManager` runs your method in your app.
 - **The model keeps no state.** Each model call resends the full history. The list of messages grows by two per tool call.
 - **Spring AI caps tool calls only.** `DefaultToolCallingManager` allows 40 calls per tool and 150 in total for each question. Nothing caps tokens or time. Chapter 6 adds those limits.
 - **Order decides what runs inside the loop.** An advisor with a higher order than `ToolCallingAdvisor` runs on every model call. An advisor with a lower order runs once for each `.call()`.
+
+</div>
+<div class="lang-panel" role="tabpanel" id="t4-python" data-lang="python" data-label="Python" aria-labelledby="t4-python-tab">
+
+- **Your code calls `.invoke()` once.** The agent's loop runs inside it. One question about `checkout` costs two model calls.
+- **The model never runs code.** It asks. The agent's tools node runs your method in your app.
+- **The model keeps no state.** Each model call resends the full history. The list of messages grows by two per tool call.
+- **LangChain caps nothing by default.** The graph stops after 10,007 steps. Add `ToolCallLimitMiddleware` or `ModelCallLimitMiddleware` for real limits. Chapter 6 writes its own.
+- **Middleware hooks decide what runs inside the loop.** `wrap_model_call` runs on every model call. `before_agent` and `after_agent` run once for each `.invoke()`.
+
+</div>
+</div>
 
 Figure 4.4 shows the same run in time order, with the checkout question from Step 5.
 
@@ -444,6 +708,10 @@ The three Chapter 4 requests in `requests/harness.http` send all three questions
 
 Read the log for a question with a service and a window:
 
+<div class="lang-tabs">
+<div class="lang-tabs__bar" role="tablist" aria-label="Code language"><button type="button" role="tab" class="lang-tab" id="t5-java-tab" data-lang="java" aria-controls="t5-java" aria-selected="true">Java</button><button type="button" role="tab" class="lang-tab" id="t5-python-tab" data-lang="python" aria-controls="t5-python" aria-selected="false">Python</button></div>
+<div class="lang-panel" role="tabpanel" id="t5-java" data-lang="java" data-label="Java" aria-labelledby="t5-java-tab">
+
 ```text
 00:15:45.254 DEBUG DispatcherServlet                        GET "/askAutoToolCall?input=how+many+error+events+in+the+checkout+service+in+the+last+15+minutes%3F", parameters={masked}
 00:15:45.254 DEBUG Assistant                                [auto] Spring AI runs every tool call. Question: how many error events in the checkout service in the last 15 minutes?
@@ -465,6 +733,35 @@ Read the log for a question with a service and a window:
 - **`Executing tool call: countErrors`** means Spring AI ran the tool. Your code did not.
 - **`[tool]`** shows the arguments the model chose and the result.
 - **The second prompt has four messages.** The two `""` entries are the tool call and the tool result. They hold data, not text.
+
+</div>
+<div class="lang-panel" role="tabpanel" id="t5-python" data-lang="python" data-label="Python" aria-labelledby="t5-python-tab">
+
+```text
+16:07:21.876 DEBUG harness.assistant                        [auto] LangChain runs every tool call. Question: how many error events in the checkout service in the last 15 minutes?
+16:07:21.879 INFO  ChatModelPromptContent                   Chat Model Prompt Content:
+['You are a careful assistant. Answer in two sentences or fewer.', 'how many error events in the checkout service in the last 15 minutes?']
+16:07:24.634 INFO  httpx2                                   HTTP Request: POST http://localhost:1234/v1/chat/completions "HTTP/1.1 200 OK"
+16:07:24.641 INFO  ChatModelCompletion                      Chat Model Completion:
+[]
+16:07:24.642 DEBUG ToolCalling                              Executing tool call: count_errors
+16:07:24.642 DEBUG harness.log_tools                        [tool] count_errors(service=checkout, minutes=15) returned 412
+16:07:24.643 INFO  ChatModelPromptContent                   Chat Model Prompt Content:
+['You are a careful assistant. Answer in two sentences or fewer.', 'how many error events in the checkout service in the last 15 minutes?', '', '412']
+16:07:24.942 INFO  httpx2                                   HTTP Request: POST http://localhost:1234/v1/chat/completions "HTTP/1.1 200 OK"
+16:07:24.943 INFO  ChatModelCompletion                      Chat Model Completion:
+['There were 412 error events in the checkout service over the last 15 minutes.']
+16:07:24.943 DEBUG harness.assistant                        [auto] Final answer: There were 412 error events in the checkout service over the last 15 minutes.
+16:07:24.944 INFO  uvicorn.access                           127.0.0.1:55589 - "GET /askAutoToolCall?input=how%20many%20error%20events%20in%20the%20checkout%20service%20in%20the%20last%2015%20minutes%3F HTTP/1.1" 200
+```
+
+- **Two model calls for one request.** Each one has an `httpx2` line. The first reply is a tool call, so its completion is `[]`.
+- **`Executing tool call: count_errors`** means LangChain ran the tool. Your code did not.
+- **`[tool]`** shows the arguments the model chose and the result.
+- **The second prompt has four messages.** The `''` entry is the tool call, which holds no text. `'412'` is the tool result.
+
+</div>
+</div>
 
 **Exercise:** Rename the tool, then remove its description. Compare the model's choices each time.
 
