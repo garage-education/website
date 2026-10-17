@@ -72,6 +72,26 @@ Table 6.1 lists each reason and the limit behind it.
 
 <p class="caption">Table 6.1. The stop reasons and their limits. Chapter 9 adds <code>APPROVAL_TIMEOUT</code> and <code>REJECTED</code>.</p>
 
+### What Spring AI stops on its own
+
+`ToolCallingAdvisor` from Chapter 4 runs a loop too. Table 6.2 compares its stop rules with yours.
+
+| `StopReason` | `ToolCallingAdvisor` (Chapter 4) | `AgentLoop` |
+|---|---|---|
+| `FINAL_ANSWER` | Stops when the reply has no tool calls | The same |
+| `STEP_LIMIT` | No step cap. It caps tool calls: 40 per tool and 150 in total, per question. | 5 model calls |
+| `TOKEN_BUDGET` | None. It adds up the tokens but never stops on them. | 8,000 tokens |
+| `TIMEOUT` | None | 60 seconds |
+| `LOOP_DETECTED` | In part. The per-tool cap stops the 41st call to one tool, whatever its arguments. | 3 identical calls: same tool, same arguments |
+
+<p class="caption">Table 6.2. Spring AI's stop rules next to yours, with the Spring AI 2.0.1 defaults. (Source: Spring AI reference, <a href="https://docs.spring.io/spring-ai/reference/api/tools.html">Tool Calling</a>, Tool Call Limits.)</p>
+
+- **The caps do not protect `/run`.** `AgentLoop` runs each tool itself through `ToolCallback.call`. Spring AI's `DefaultToolCallingManager` never sees those calls. Your limits are the only ones.
+- **On a cap breach, Spring AI ends the run.** `ToolCallingAdvisor` returns the breach as the final reply. Its finish reason is `ToolCallLimitExceededException.FINISH_REASON`.
+- **The caps are properties.** Set `spring.ai.tools.limits.max-calls-per-tool-default` and `spring.ai.tools.limits.max-total-tool-calls` in `application.yaml`. The value `-1` turns a cap off.
+
+Spring AI has no token or time limit for the tool loop. A harness needs both, so you write them.
+
 ## Step 2: Check the rules in order
 
 The loop checks the rules after each model reply. Figure 6.1 shows the order.
@@ -266,7 +286,7 @@ Lower one limit, restart the app, and ask one question. Put the limit back after
 curl -G http://localhost:8080/run --data-urlencode "input=how many error events in the checkout service in the last 15 minutes?"
 ```
 
-Table 6.2 shows the results from one run with Gemma.
+Table 6.3 shows the results from one run with Gemma.
 
 | Change | Result |
 |---|---|
@@ -276,7 +296,7 @@ Table 6.2 shows the results from one run with Gemma.
 | `TIMEOUT = Duration.ofMillis(1)` | `{"answer":null,"reason":"TIMEOUT","steps":1,"tokens":230}` |
 | `MAX_REPEATS = 1` | `{"answer":null,"reason":"LOOP_DETECTED","steps":1,"tokens":232}` |
 
-<p class="caption">Table 6.2. One limit lowered per run, with Gemma. Token counts vary between runs.</p>
+<p class="caption">Table 6.3. One limit lowered per run, with Gemma. Token counts vary between runs.</p>
 
 Each stop logs its reason. This is the log for `MAX_TOKENS = 100`:
 

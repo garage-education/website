@@ -39,6 +39,7 @@ toc: true
 - **Agent.** A model plus a harness plus a goal.
 - **Tool.** A Java method the model can ask the harness to run.
 - **Tool call.** The model's request to run a tool. It names the tool and gives arguments.
+- **Advisor.** A Spring AI class that runs around each model call. It can change the request or the reply. Tool calling, memory, and retrieval are each one advisor.
 - **Loop.** The cycle of model call, tool execution, and result. It ends when the run stops.
 - **Termination.** The rule that ends a run.
 - **Context window.** The text the model can read in one call. It is measured in tokens.

@@ -5,7 +5,7 @@ summary: Build the code around a large language model in Java. Tools, the agent 
 weight: 1
 
 date: "2026-10-10T00:00:00Z"
-lastmod: "2026-10-16T00:00:00Z"
+lastmod: "2026-10-17T00:00:00Z"
 draft: false
 toc: true
 ---
